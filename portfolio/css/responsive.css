@@ -1,0 +1,218 @@
+/* ============================================================
+   RESPONSIVE.CSS  —  Mobile-first, polished at every breakpoint
+   Breakpoints:
+     xs  < 480px   (small phones)
+     sm  < 640px   (phones)
+     md  < 768px   (large phones / small tablets)
+     lg  < 1024px  (tablets / small laptops)
+     xl  < 1280px  (laptops)
+   ============================================================ */
+
+/* ── TABLET / SMALL LAPTOP (≤ 1100px) — photo goes on top ── */
+@media (max-width: 1100px) {
+  #hero {
+    padding: 100px var(--section-pad-x) 60px;
+  }
+  /* photo.css handles grid collapse at 1100px */
+}
+
+/* ── LARGE PHONE / SMALL TABLET (≤ 768px) ──────────────────── */
+@media (max-width: 768px) {
+  :root {
+    --section-pad-x: 24px;
+    --section-pad-y: 72px;
+  }
+
+  /* ---- NAV ---- */
+  #navbar {
+    padding: 14px 20px;
+  }
+  .nav-toggle {
+    display: flex;
+    z-index: 200;
+    position: relative;
+  }
+  .nav-links {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 8, 16, 0.98);
+    backdrop-filter: blur(24px);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 36px;
+    z-index: 150;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-16px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+  }
+  .nav-links.open {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(0);
+  }
+  .nav-links li { width: 100%; text-align: center; }
+  .nav-links a {
+    font-size: 1.3rem;
+    letter-spacing: 0.18em;
+    display: block;
+    padding: 10px 0;
+  }
+  /* Decorative divider in mobile menu */
+  .nav-links li + li {
+    border-top: 1px solid var(--border);
+    padding-top: 8px;
+  }
+
+  /* ---- HERO ---- */
+  #hero {
+    padding: 100px 24px 56px;
+    min-height: auto;
+  }
+  .hero-tag { font-size: 0.68rem; }
+  .hero-bio  { font-size: 0.85rem; }
+  .hero-cta  { gap: 12px; }
+  .btn       { padding: 13px 26px; font-size: 0.74rem; }
+  .hero-stats { gap: 24px; margin-top: 36px; }
+  .stat-num  { font-size: 1.6rem; }
+
+  /* ---- SECTION LABELS ---- */
+  .section-title { margin-bottom: 40px; }
+
+  /* ---- SKILLS ---- */
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* ---- PROJECTS ---- */
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  /* ---- TIMELINE ---- */
+  .timeline::before { left: 14px; }
+  .timeline-item    { padding-left: 44px; padding-bottom: 36px; }
+  .timeline-dot     { left: 6px; width: 16px; height: 16px; }
+
+  /* ---- PROFILES ---- */
+  .profiles-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .profile-card { min-width: unset; padding: 20px 16px; }
+  .profile-icon { font-size: 1.5rem; }
+  .profile-name { font-size: 0.85rem; }
+
+  /* ---- ACHIEVEMENTS ---- */
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* ---- CERTS ---- */
+  .certs-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  /* ---- CONTACT ---- */
+  #contact { padding-top: 72px; }
+  .contact-email { word-break: break-all; }
+  .contact-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .contact-link { width: 100%; max-width: 320px; justify-content: center; }
+
+  /* ---- FOOTER ---- */
+  footer {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 24px;
+  }
+}
+
+/* ── PHONE (≤ 640px) ──────────────────────────────────────── */
+@media (max-width: 640px) {
+  :root {
+    --section-pad-x: 20px;
+    --section-pad-y: 64px;
+  }
+
+  /* Hero tighter */
+  #hero { padding: 100px 20px 48px; }
+  .hero-name { letter-spacing: -0.02em; line-height: 1; }
+  .role-badge { font-size: 0.68rem; padding: 7px 14px; }
+
+  /* Stats row wrap */
+  .hero-stats { gap: 20px; }
+  .stat-num   { font-size: 1.4rem; }
+  .stat-label { font-size: 0.6rem; }
+
+  /* Cards tighter */
+  .skill-card,
+  .project-card { padding: 24px 20px; }
+  .project-title { font-size: 1rem; }
+
+  /* Profiles stack */
+  .profiles-row {
+    grid-template-columns: 1fr;
+  }
+  .profile-card { display: flex; align-items: center; gap: 16px; text-align: left; padding: 18px 20px; }
+  .profile-icon { margin-bottom: 0; font-size: 1.6rem; }
+
+  /* Achievement cards */
+  .achievement-card { padding: 20px 18px; }
+
+  /* Section label */
+  .section-label { font-size: 0.65rem; }
+}
+
+/* ── SMALL PHONES (≤ 480px) ───────────────────────────────── */
+@media (max-width: 480px) {
+  .hero-cta { flex-direction: column; }
+  .btn      { width: 100%; text-align: center; }
+
+  .contact-links { width: 100%; }
+  .contact-link  { width: 100%; }
+
+  .nav-links a { font-size: 1.1rem; }
+
+  /* Bring section title down a notch */
+  .section-title { font-size: clamp(1.6rem, 7vw, 2.4rem); margin-bottom: 32px; }
+
+  /* Timeline even tighter */
+  .timeline-body { font-size: 0.78rem; }
+  .timeline-title { font-size: 0.95rem; }
+}
+
+/* ── ENSURE CURSOR HIDDEN ON TOUCH DEVICES ─────────────────── */
+@media (hover: none) and (pointer: coarse) {
+  .cursor,
+  .cursor-ring { display: none !important; }
+  body { cursor: auto !important; }
+  * { cursor: auto !important; }
+}
+
+/* ── DESKTOP REFINEMENTS (≥ 1280px) ────────────────────────── */
+@media (min-width: 1280px) {
+  :root {
+    --section-pad-x: 80px;
+    --section-pad-y: 110px;
+  }
+  .projects-grid { grid-template-columns: repeat(3, 1fr); }
+  .skills-grid   { grid-template-columns: repeat(4, 1fr); }
+}
+
+/* ── LARGE DESKTOP (≥ 1600px) ──────────────────────────────── */
+@media (min-width: 1600px) {
+  :root { --section-pad-x: 120px; }
+  .hero-content { max-width: 1000px; }
+}

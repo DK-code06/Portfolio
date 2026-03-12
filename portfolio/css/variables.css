@@ -1,0 +1,31 @@
+:root {
+  /* Colors */
+  --bg:       #050810;
+  --surface:  #0d1220;
+  --accent:   #00f5c4;
+  --accent2:  #7b6cff;
+  --accent3:  #ff5e7e;
+  --text:     #e8eaf6;
+  --muted:    #7a84a0;
+  --border:   rgba(255, 255, 255, 0.06);
+
+  /* Glows */
+  --glow-accent:  0 0 40px rgba(0, 245, 196, 0.15);
+  --glow-accent2: 0 0 40px rgba(123, 108, 255, 0.15);
+
+  /* Typography */
+  --font-display: 'Syne', sans-serif;
+  --font-mono:    'DM Mono', monospace;
+
+  /* Spacing */
+  --section-pad-x: 60px;
+  --section-pad-y: 100px;
+
+  /* Radius */
+  --radius-sm: 4px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+
+  /* Transitions */
+  --transition: 0.3s ease;
+}

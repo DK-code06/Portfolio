@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Deepakkumar B — Full Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/reset.css"/>
+  <link rel="stylesheet" href="css/variables.css"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/nav.css"/>
+  <link rel="stylesheet" href="css/hero.css"/>
+  <link rel="stylesheet" href="css/sections.css"/>
+  <link rel="stylesheet" href="css/cards.css"/>
+  <link rel="stylesheet" href="css/contact.css"/>
+  <link rel="stylesheet" href="css/animations.css"/>
+  <link rel="stylesheet" href="css/photo.css"/>
+  <link rel="stylesheet" href="css/responsive.css"/>
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- Navigation -->
+  <nav id="navbar">
+    <div class="nav-logo">DK<span>.dev</span></div>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="pages/achievements.html">Achievements</a></li>
+      <li><a href="pages/certifications.html">Certs</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-orb orb1"></div>
+    <div class="hero-orb orb2"></div>
+    <div class="hero-orb orb3"></div>
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- LEFT: Text -->
+    <div class="hero-content">
+
+      <h1 class="hero-name">
+        <span class="line1">Deepak</span>
+        <span class="line2">kumar B</span>
+      </h1>
+      <div class="hero-roles">
+        <span class="role-badge primary">Full Stack Developer</span>
+        <span class="role-badge secondary">UI/UX Designer</span>
+      </div>
+      <p class="hero-bio">
+        Building responsive web applications and scalable REST APIs with JavaScript, React, Node.js &amp; Java. Hackathon winner. Passionate about turning complex problems into elegant digital solutions.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-count="5">0</span>
+          <span class="stat-label">Projects Built</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="1000">0</span>
+          <span class="stat-label">Problems Solved</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" data-count="8">0</span>
+          <span class="stat-label">Certifications</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: Photo -->
+    <div class="hero-photo-wrap">
+      <!-- Rotating orbit rings -->
+      <div class="orbit orbit-1"></div>
+      <div class="orbit orbit-2"></div>
+      <div class="orbit orbit-3"></div>
+
+      <!-- Floating tech dots on orbit -->
+      <div class="orbit-dot dot-react">⚛</div>
+      <div class="orbit-dot dot-node">⬡</div>
+      <div class="orbit-dot dot-java">☕</div>
+      <div class="orbit-dot dot-db">🗄</div>
+
+      <!-- Glow blob behind photo -->
+      <div class="photo-glow"></div>
+
+      <!-- Photo frame -->
+      <div class="photo-frame">
+        <div class="photo-border-spin"></div>
+        <div class="photo-inner">
+          <!-- 
+            ✅ HOW TO ADD YOUR PHOTO:
+            1. Place your photo in the "images/" folder (e.g. images/deepak.jpg)
+            2. Replace the <div class="photo-placeholder"> below with:
+               <img src="images/deepak.jpg" alt="Deepakkumar B" />
+          -->
+<img src="images/deepak.jpg" alt="Deepakkumar B" />
+        </div>
+
+        <!-- Scan line animation -->
+        <div class="photo-scan"></div>
+
+        <!-- Corner brackets -->
+        <span class="corner tl"></span>
+        <span class="corner tr"></span>
+        <span class="corner bl"></span>
+        <span class="corner br"></span>
+      </div>
+
+      <!-- Floating info chips -->
+      <div class="info-chip chip-location">
+        <span>📍</span> Tamil Nadu, India
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-label">Expertise</div>
+    <h2 class="section-title reveal">Technical Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">⚡</div>
+        <div class="skill-card-title">Languages</div>
+        <div class="skill-tags">
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">C</span>
+          <span class="skill-tag">C++</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">JavaScript</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">🌐</div>
+        <div class="skill-card-title">Web Development</div>
+        <div class="skill-tags">
+          <span class="skill-tag">HTML</span>
+          <span class="skill-tag">CSS</span>
+          <span class="skill-tag">React.js</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">REST APIs</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">🗄️</div>
+        <div class="skill-card-title">Databases &amp; Tools</div>
+        <div class="skill-tags">
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">LeetCode</span>
+          <span class="skill-tag">HackerRank</span>
+        </div>
+      </div>
+      <div class="skill-card reveal">
+        <div class="skill-card-icon">🎨</div>
+        <div class="skill-card-title">Design &amp; Concepts</div>
+        <div class="skill-tags">
+          <span class="skill-tag">UI/UX Design</span>
+          <span class="skill-tag">Full Stack Dev</span>
+          <span class="skill-tag">Data Structures</span>
+          <span class="skill-tag">Agile</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-label">Work</div>
+    <h2 class="section-title reveal">Projects</h2>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <span class="project-num">01 — HEALTHCARE</span>
+        <div class="project-title">Hospital &amp; Appointment Management System</div>
+        <p class="project-desc">System to manage patient records and appointments with structured database design and a clean interface.</p>
+        <span class="project-status status-done">Completed</span>
+      </div>
+      <div class="project-card reveal">
+        <span class="project-num">02 — PRODUCTIVITY</span>
+        <div class="project-title">Task Management &amp; Productivity System</div>
+        <p class="project-desc">Task tracking application featuring prioritization, deadlines, and productivity analytics.</p>
+        <span class="project-status status-done">Completed</span>
+      </div>
+      <div class="project-card reveal">
+        <span class="project-num">03 — FULL STACK</span>
+        <div class="project-title">Blog Application</div>
+        <p class="project-desc">Full-stack blog platform with CRUD operations, user authentication, and a responsive UI.</p>
+        <span class="project-status status-done">Completed</span>
+      </div>
+      <div class="project-card reveal">
+        <span class="project-num">04 — FINTECH</span>
+        <div class="project-title">Finance Management System</div>
+        <p class="project-desc">Application to track income, expenses, and generate financial summaries and reports.</p>
+        <span class="project-status status-done">Completed</span>
+      </div>
+      <div class="project-card reveal">
+        <span class="project-num">05 — EDTECH</span>
+        <div class="project-title">Quiz Management System</div>
+        <p class="project-desc">Online quiz platform with automated evaluation, scoring, and results tracking.</p>
+        <span class="project-status status-done">Completed</span>
+      </div>
+      <div class="project-card reveal">
+        <span class="project-num">06 — ONGOING</span>
+        <div class="project-title">My Event Partner &amp; College Event Management</div>
+        <p class="project-desc">Dual project: a personal event coordination app and a full-scale college event management platform.</p>
+        <span class="project-status status-ongoing">In Progress</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE & EDUCATION -->
+  <section id="experience">
+    <div class="section-label">Journey</div>
+    <h2 class="section-title reveal">Experience &amp; Education</h2>
+    <div class="timeline">
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Internship</div>
+        <div class="timeline-title">SYNNOVIQ Technologies Pvt. Ltd.</div>
+        <div class="timeline-sub">Software Development Intern</div>
+        <p class="timeline-body">Worked on real-world development workflows, collaborative coding practices, and debugging in a professional environment.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Present</div>
+        <div class="timeline-title">B.E. — Computer Science / IT</div>
+        <div class="timeline-sub">CGPA: 7.13</div>
+        <p class="timeline-body">Undergraduate engineering with a strong focus on full stack development, algorithms, and modern software practices.</p>
+      </div>
+      <div class="timeline-item reveal">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Higher Secondary</div>
+        <div class="timeline-title">Nadar Higher Secondary School, Kovilpatti</div>
+        <div class="timeline-sub">12th Standard — 80%</div>
+        <p class="timeline-body">Strong academic foundation in science and mathematics, leading to pursuit of Computer Engineering.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CODING PROFILES -->
+  <section id="coding">
+    <div class="section-label">Active On</div>
+    <h2 class="section-title reveal">Coding Profiles</h2>
+    <div class="profiles-row">
+      <div class="profile-card reveal">
+        <span class="profile-icon">⚔️</span>
+        <div class="profile-name">Skillrack</div>
+        <div class="profile-stat">1500+ problems solved</div>
+      </div>
+      <div class="profile-card reveal">
+        <span class="profile-icon">🟡</span>
+        <div class="profile-name">LeetCode</div>
+        <div class="profile-stat">Active problem solving</div>
+      </div>
+      <div class="profile-card reveal">
+        <span class="profile-icon">⭐</span>
+        <div class="profile-name">HackerRank</div>
+        <div class="profile-stat">Regular practice</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-label">Connect</div>
+    <h2 class="section-title reveal">Let's Build Something</h2>
+    <a class="contact-email reveal" href="mailto:bdeepakkumar2006@gmail.com">bdeepakkumar2006@gmail.com</a>
+    <div class="contact-links reveal">
+      <a href="https://github.com/DK-code06" target="_blank" class="contact-link">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/deepakkumar-b-1a46a62b6" target="_blank" class="contact-link">
+        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+      <a href="tel:6369966100" class="contact-link">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.06 6.06l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        +91 6369966100
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <div>© 2025 Deepakkumar B — Tamil Nadu, India</div>
+    <div>Full Stack Developer · UI/UX Designer</div>
+  </footer>
+
+  <script src="js/cursor.js"></script>
+  <script src="js/particles.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="js/counter.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/photo.js"></script>
+</body>
+</html>

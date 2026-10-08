@@ -1,44 +1,45 @@
 /* ============================================================
-   PHOTO.CSS  —  Animated hero photo frame + split layout
+   PHOTO.CSS  —  Hero photo frame, subtle tech orbit & tilt
    ============================================================ */
 
 /* ── HERO SPLIT LAYOUT ─────────────────────────────────────── */
 #hero {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1.15fr 0.85fr;
   align-items: center;
-  gap: 40px;
+  gap: 48px;
   min-height: 100vh;
-  padding: 120px var(--section-pad-x) 80px;
+  padding: 130px var(--section-pad-x) 80px;
 }
 
 /* ── PHOTO WRAP ────────────────────────────────────────────── */
 .hero-photo-wrap {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: 440px;
+  height: 440px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  animation: fadeUp 1s 0.4s ease forwards;
+  animation: fadeUp 1s 0.3s ease forwards;
   opacity: 0;
   z-index: 2;
+  margin-left: auto;
 }
 
 /* ── GLOW BLOB ─────────────────────────────────────────────── */
 .photo-glow {
   position: absolute;
-  inset: -40px;
+  inset: -30px;
   border-radius: 50%;
   background: radial-gradient(
     circle at 50% 50%,
-    rgba(0, 245, 196, 0.18) 0%,
-    rgba(123, 108, 255, 0.12) 50%,
+    rgba(0, 240, 192, 0.12) 0%,
+    rgba(99, 102, 241, 0.08) 50%,
     transparent 70%
   );
-  animation: glowPulse 4s ease-in-out infinite;
-  filter: blur(20px);
+  animation: glowPulse 5s ease-in-out infinite;
+  filter: blur(28px);
 }
 
 /* ── ORBIT RINGS ───────────────────────────────────────────── */
@@ -48,60 +49,62 @@
   border: 1px dashed;
   top: 50%; left: 50%;
   transform: translate(-50%, -50%);
+  pointer-events: none;
 }
 .orbit-1 {
-  width: 420px; height: 420px;
-  border-color: rgba(0, 245, 196, 0.18);
-  animation: orbitSpin 18s linear infinite;
+  width: 380px; height: 380px;
+  border-color: rgba(0, 240, 192, 0.14);
+  animation: orbitSpin 24s linear infinite;
 }
 .orbit-2 {
-  width: 500px; height: 500px;
-  border-color: rgba(123, 108, 255, 0.14);
-  animation: orbitSpin 26s linear infinite reverse;
+  width: 460px; height: 460px;
+  border-color: rgba(99, 102, 241, 0.12);
+  animation: orbitSpin 32s linear infinite reverse;
 }
 .orbit-3 {
-  width: 580px; height: 580px;
-  border-color: rgba(255, 94, 126, 0.10);
-  animation: orbitSpin 34s linear infinite;
+  width: 530px; height: 530px;
+  border-color: rgba(255, 255, 255, 0.05);
+  animation: orbitSpin 42s linear infinite;
 }
 
 /* ── ORBIT DOTS (tech icons) ───────────────────────────────── */
 .orbit-dot {
   position: absolute;
-  width: 36px; height: 36px;
+  width: 34px; height: 34px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   background: var(--surface);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-light);
   color: var(--accent);
   top: 50%; left: 50%;
   transform-origin: 0 0;
-  box-shadow: 0 0 12px rgba(0,245,196,0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   transition: box-shadow 0.3s;
 }
-.orbit-dot:hover { box-shadow: 0 0 24px rgba(0,245,196,0.5); }
+.orbit-dot:hover {
+  box-shadow: 0 0 16px rgba(0, 240, 192, 0.4);
+}
 
-/* Position each dot on orbit-1 (155px radius) at different angles */
-.dot-react { animation: dotOrbit1   18s linear infinite; }
-.dot-node  { animation: dotOrbit1R  18s linear infinite; animation-delay: -4.5s; }
-.dot-java  { animation: dotOrbit1   18s linear infinite; animation-delay: -9s; }
-.dot-db    { animation: dotOrbit1R  18s linear infinite; animation-delay: -13.5s; }
+.dot-react { animation: dotOrbit1  24s linear infinite; }
+.dot-node  { animation: dotOrbit1R 24s linear infinite; animation-delay: -6s; }
+.dot-ts    { animation: dotOrbit1  24s linear infinite; animation-delay: -12s; }
+.dot-db    { animation: dotOrbit1R 24s linear infinite; animation-delay: -18s; }
 
 /* ── PHOTO FRAME ───────────────────────────────────────────── */
 .photo-frame {
   position: relative;
-  width: 360px;
-  height: 360px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
   z-index: 3;
   transform-style: preserve-3d;
   transition: transform 0.1s ease-out;
 }
 
-/* Spinning gradient border */
+/* Subtle spinning border */
 .photo-border-spin {
   position: absolute;
   inset: -3px;
@@ -110,13 +113,14 @@
     from 0deg,
     var(--accent),
     var(--accent2),
-    var(--accent3),
+    rgba(255, 255, 255, 0.2),
     var(--accent),
-    transparent 60%,
+    transparent 65%,
     var(--accent2)
   );
-  animation: borderSpin 4s linear infinite;
+  animation: borderSpin 6s linear infinite;
   z-index: -1;
+  opacity: 0.85;
 }
 
 /* Inner photo circle */
@@ -136,37 +140,12 @@
   object-position: top center;
   border-radius: 50%;
   display: block;
-  filter: brightness(0.95) contrast(1.05);
+  filter: brightness(0.96) contrast(1.04);
   transition: transform 0.4s ease, filter 0.4s ease;
 }
 .photo-frame:hover .photo-inner img {
-  transform: scale(1.05);
-  filter: brightness(1.05) contrast(1.1);
-}
-
-/* Placeholder (remove once photo added) */
-.photo-placeholder {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: linear-gradient(135deg, rgba(0,245,196,0.06), rgba(123,108,255,0.06));
-}
-.placeholder-initials {
-  font-family: var(--font-display);
-  font-size: 3.5rem;
-  font-weight: 800;
-  color: var(--accent);
-  line-height: 1;
-}
-.placeholder-label {
-  font-size: 0.62rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--muted);
+  transform: scale(1.04);
+  filter: brightness(1.02) contrast(1.06);
 }
 
 /* Scan line sweep */
@@ -184,19 +163,18 @@
   left: 0; right: 0;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--accent), transparent);
-  opacity: 0.6;
-  animation: scanLine 3s ease-in-out infinite;
-  box-shadow: 0 0 12px var(--accent);
+  opacity: 0.45;
+  animation: scanLine 4s ease-in-out infinite;
 }
 
 /* Corner brackets */
 .corner {
   position: absolute;
-  width: 18px; height: 18px;
+  width: 16px; height: 16px;
   border-color: var(--accent);
   border-style: solid;
   z-index: 5;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 .corner.tl { top: -2px;  left: -2px;  border-width: 2px 0 0 2px; border-radius: 4px 0 0 0; }
 .corner.tr { top: -2px;  right: -2px; border-width: 2px 2px 0 0; border-radius: 0 4px 0 0; }
@@ -206,50 +184,49 @@
 /* ── INFO CHIPS ────────────────────────────────────────────── */
 .info-chip {
   position: absolute;
-  background: rgba(13, 18, 32, 0.92);
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  padding: 7px 16px;
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
+  background: rgba(13, 20, 36, 0.94);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  padding: 8px 16px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
   color: var(--text);
   display: flex;
   align-items: center;
-  gap: 6px;
-  backdrop-filter: blur(12px);
+  gap: 8px;
+  backdrop-filter: blur(14px);
   white-space: nowrap;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
   z-index: 6;
 }
 .chip-location {
   bottom: 20px;
-  left: -30px;
-  animation: floatChip1 5s ease-in-out infinite;
-  border-color: rgba(0,245,196,0.2);
+  left: -20px;
+  animation: floatChip1 6s ease-in-out infinite;
+  border-color: rgba(0, 240, 192, 0.25);
 }
 .chip-status {
-  top: 30px;
-  right: -30px;
-  animation: floatChip2 6s ease-in-out infinite;
-  border-color: rgba(123,108,255,0.25);
+  top: 24px;
+  right: -20px;
+  animation: floatChip2 7s ease-in-out infinite;
+  border-color: rgba(99, 102, 241, 0.3);
 }
 
-/* Pulsing green dot */
 .pulse-dot {
   width: 8px; height: 8px;
   border-radius: 50%;
   background: var(--accent);
   display: inline-block;
   animation: pulseDot 2s ease-in-out infinite;
-  box-shadow: 0 0 0 0 rgba(0,245,196,0.4);
 }
 
 /* ============================================================
    KEYFRAMES
    ============================================================ */
 @keyframes glowPulse {
-  0%, 100% { opacity: 0.7; transform: scale(1); }
-  50%       { opacity: 1;   transform: scale(1.08); }
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50%       { opacity: 0.9; transform: scale(1.06); }
 }
 
 @keyframes orbitSpin {
@@ -257,14 +234,13 @@
   to   { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
-/* Dots orbit around the frame at 210px radius */
 @keyframes dotOrbit1 {
-  from { transform: translate(-50%, -50%) rotate(0deg)   translateX(210px) rotate(0deg); }
-  to   { transform: translate(-50%, -50%) rotate(360deg) translateX(210px) rotate(-360deg); }
+  from { transform: translate(-50%, -50%) rotate(0deg)   translateX(190px) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(360deg) translateX(190px) rotate(-360deg); }
 }
 @keyframes dotOrbit1R {
-  from { transform: translate(-50%, -50%) rotate(0deg)    translateX(210px) rotate(0deg); }
-  to   { transform: translate(-50%, -50%) rotate(-360deg) translateX(210px) rotate(360deg); }
+  from { transform: translate(-50%, -50%) rotate(0deg)    translateX(190px) rotate(0deg); }
+  to   { transform: translate(-50%, -50%) rotate(-360deg) translateX(190px) rotate(360deg); }
 }
 
 @keyframes borderSpin {
@@ -274,81 +250,22 @@
 
 @keyframes scanLine {
   0%   { top: 0%; opacity: 0; }
-  10%  { opacity: 0.6; }
-  90%  { opacity: 0.6; }
+  10%  { opacity: 0.45; }
+  90%  { opacity: 0.45; }
   100% { top: 100%; opacity: 0; }
 }
 
 @keyframes floatChip1 {
-  0%, 100% { transform: translateY(0px) rotate(-1deg); }
-  50%       { transform: translateY(-8px) rotate(0deg); }
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-6px); }
 }
 @keyframes floatChip2 {
-  0%, 100% { transform: translateY(0px) rotate(1deg); }
-  50%       { transform: translateY(-10px) rotate(-0.5deg); }
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-8px); }
 }
 
 @keyframes pulseDot {
-  0%   { box-shadow: 0 0 0 0 rgba(0,245,196,0.5); }
-  70%  { box-shadow: 0 0 0 8px rgba(0,245,196,0); }
-  100% { box-shadow: 0 0 0 0 rgba(0,245,196,0); }
-}
-
-/* ============================================================
-   RESPONSIVE
-   ============================================================ */
-
-/* Tablet: smaller wrap, less orbit rings visible */
-@media (max-width: 1100px) {
-  #hero {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto;
-    gap: 48px;
-  }
-  .hero-photo-wrap {
-    width: 380px;
-    height: 380px;
-    margin: 0 auto;
-    order: -1;
-  }
-  .photo-frame  { width: 280px; height: 280px; }
-  .orbit-1      { width: 330px; height: 330px; }
-  .orbit-2      { width: 400px; height: 400px; }
-  .orbit-3      { display: none; }
-  @keyframes dotOrbit1 {
-    from { transform: translate(-50%,-50%) rotate(0deg)   translateX(165px) rotate(0deg); }
-    to   { transform: translate(-50%,-50%) rotate(360deg) translateX(165px) rotate(-360deg); }
-  }
-  @keyframes dotOrbit1R {
-    from { transform: translate(-50%,-50%) rotate(0deg)    translateX(165px) rotate(0deg); }
-    to   { transform: translate(-50%,-50%) rotate(-360deg) translateX(165px) rotate(360deg); }
-  }
-}
-
-@media (max-width: 768px) {
-  .hero-photo-wrap {
-    width: 300px;
-    height: 300px;
-  }
-  .photo-frame  { width: 230px; height: 230px; }
-  .orbit-1      { width: 270px; height: 270px; }
-  .orbit-2      { width: 330px; height: 330px; }
-  .chip-location { left: 0; font-size: 0.62rem; }
-  .chip-status   { right: 0; font-size: 0.62rem; }
-  .orbit-dot     { width: 30px; height: 30px; font-size: 0.78rem; }
-  .placeholder-initials { font-size: 2.8rem; }
-}
-
-@media (max-width: 480px) {
-  .hero-photo-wrap {
-    width: 250px;
-    height: 250px;
-  }
-  .photo-frame  { width: 190px; height: 190px; }
-  .orbit-1      { width: 230px; height: 230px; }
-  .orbit-2      { display: none; }
-  .info-chip    { font-size: 0.58rem; padding: 5px 12px; }
-  .chip-location { left: -5px; bottom: 0; }
-  .chip-status   { right: -5px; top: 10px; }
-  .orbit-dot     { width: 26px; height: 26px; font-size: 0.7rem; }
+  0%   { box-shadow: 0 0 0 0 rgba(0, 240, 192, 0.5); }
+  70%  { box-shadow: 0 0 0 7px rgba(0, 240, 192, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(0, 240, 192, 0); }
 }

@@ -4,9 +4,12 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Certifications — Deepakkumar B</title>
+  <meta name="description" content="Technical and professional engineering certifications earned by Deepakkumar B."/>
+
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"/>
+
   <link rel="stylesheet" href="../css/reset.css"/>
   <link rel="stylesheet" href="../css/variables.css"/>
   <link rel="stylesheet" href="../css/base.css"/>
@@ -17,18 +20,18 @@
   <link rel="stylesheet" href="../css/animations.css"/>
   <link rel="stylesheet" href="../css/responsive.css"/>
   <style>
-    .provider-group { margin-bottom: 52px; }
+    .provider-group { margin-bottom: 48px; }
     .provider-heading {
       font-family: var(--font-display);
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 700;
-      color: var(--accent2);
-      letter-spacing: 0.1em;
+      color: var(--accent);
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       margin-bottom: 20px;
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 14px;
     }
     .provider-heading::after {
       content: '';
@@ -40,60 +43,134 @@
 </head>
 <body>
 
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursor-ring"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
 
-  <nav id="navbar">
-    <div class="nav-logo">DK<span>.dev</span></div>
-    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="../index.html#skills">Skills</a></li>
-      <li><a href="../index.html#projects">Projects</a></li>
-      <li><a href="../index.html#experience">Experience</a></li>
-      <li><a href="achievements.html">Achievements</a></li>
-      <li><a href="certifications.html" class="active">Certs</a></li>
-      <li><a href="../index.html#contact">Contact</a></li>
-    </ul>
+  <!-- Navigation -->
+  <nav id="navbar" aria-label="Main Navigation">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo" aria-label="DK.dev Home">DK<span>.dev</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#experience">Experience</a></li>
+        <li><a href="achievements.html">Achievements</a></li>
+        <li><a href="certifications.html" class="active">Certs</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <section style="padding-top: 140px;">
-    <a href="../index.html" class="back-link">← Back to Portfolio</a>
+  <section style="padding-top: 140px;" aria-labelledby="certs-heading">
+    <a href="../index.html" class="back-link">&larr; Back to Portfolio</a>
 
-    <div class="section-label">Learning</div>
-    <h1 class="section-title reveal">Certifications</h1>
+    <div class="section-label">Credentials</div>
+    <h1 id="certs-heading" class="section-title reveal">Certifications &amp; Courses</h1>
+    <p class="section-desc reveal">Professional development across full-stack engineering, databases, system architecture, and cloud computing.</p>
 
+    <!-- Global Platforms -->
     <div class="provider-group reveal">
-      <div class="provider-heading">NPTEL</div>
+      <div class="provider-heading">Full-Stack &amp; Software Development</div>
       <div class="certs-grid">
-        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">Social Networks</div><div class="cert-provider">NPTEL</div></div></div>
-        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">Joy of Computing Using Python</div><div class="cert-provider">NPTEL</div></div></div>
-        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">Cloud Computing</div><div class="cert-provider">NPTEL</div></div></div>
-        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">Industrial IoT 4.0</div><div class="cert-provider">NPTEL</div></div></div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div>
+            <div class="cert-text">Full Stack Developer</div>
+            <div class="cert-provider">FreeCodeCamp</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div>
+            <div class="cert-text">IBM Full Stack Developer</div>
+            <div class="cert-provider">Coursera — IBM</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div>
+            <div class="cert-text">Introduction to UI/UX Design</div>
+            <div class="cert-provider">Udemy</div>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="provider-group reveal">
-      <div class="provider-heading">Global Platforms</div>
-      <div class="certs-grid">
-        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">Full Stack Developer</div><div class="cert-provider">FreeCodeCamp</div></div></div>
-        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">IBM Full Stack Developer</div><div class="cert-provider">Coursera</div></div></div>
-        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">Intro to UI/UX Design</div><div class="cert-provider">Udemy</div></div></div>
-      </div>
-    </div>
-
+    <!-- Infosys Springboard -->
     <div class="provider-group reveal">
       <div class="provider-heading">Infosys Springboard</div>
       <div class="certs-grid">
-        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">Software Engineering</div><div class="cert-provider">Infosys Springboard</div></div></div>
-        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">Agile Methodologies</div><div class="cert-provider">Infosys Springboard</div></div></div>
-        <div class="cert-item"><div class="cert-dot"></div><div><div class="cert-text">DBMS</div><div class="cert-provider">Infosys Springboard</div></div></div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div>
+            <div class="cert-text">Software Engineering</div>
+            <div class="cert-provider">Infosys Springboard</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div>
+            <div class="cert-text">Agile Methodologies</div>
+            <div class="cert-provider">Infosys Springboard</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div>
+            <div class="cert-text">Database Management Systems (DBMS)</div>
+            <div class="cert-provider">Infosys Springboard</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NPTEL -->
+    <div class="provider-group reveal">
+      <div class="provider-heading">NPTEL / SWAYAM</div>
+      <div class="certs-grid">
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div>
+            <div class="cert-text">Social Networks</div>
+            <div class="cert-provider">NPTEL</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div>
+            <div class="cert-text">The Joy of Computing Using Python</div>
+            <div class="cert-provider">NPTEL</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div>
+            <div class="cert-text">Cloud Computing</div>
+            <div class="cert-provider">NPTEL</div>
+          </div>
+        </div>
+        <div class="cert-item">
+          <div class="cert-dot"></div>
+          <div>
+            <div class="cert-text">Industrial IoT 4.0</div>
+            <div class="cert-provider">NPTEL</div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <div>© 2025 Deepakkumar B — Tamil Nadu, India</div>
-    <div>Full Stack Developer · UI/UX Designer</div>
+    <div>&copy; 2026 Deepakkumar B &middot; Full Stack Developer</div>
+    <div class="footer-links">
+      <a href="https://github.com/DK-code06" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/deepakkumar-b-1a46a62b6" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:bdeepakkumar2006@gmail.com">Email</a>
+    </div>
   </footer>
 
   <script src="../js/cursor.js"></script>

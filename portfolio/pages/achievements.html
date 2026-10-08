@@ -4,9 +4,12 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Achievements — Deepakkumar B</title>
+  <meta name="description" content="Verified technical hackathons and competitive achievements by Deepakkumar B."/>
+  
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"/>
+
   <link rel="stylesheet" href="../css/reset.css"/>
   <link rel="stylesheet" href="../css/variables.css"/>
   <link rel="stylesheet" href="../css/base.css"/>
@@ -19,98 +22,99 @@
 </head>
 <body>
 
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursor-ring"></div>
+  <div class="cursor" id="cursor" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
 
-  <nav id="navbar">
-    <div class="nav-logo">DK<span>.dev</span></div>
-    <button class="nav-toggle" id="navToggle"><span></span><span></span><span></span></button>
-    <ul class="nav-links" id="navLinks">
-      <li><a href="../index.html#skills">Skills</a></li>
-      <li><a href="../index.html#projects">Projects</a></li>
-      <li><a href="../index.html#experience">Experience</a></li>
-      <li><a href="achievements.html" class="active">Achievements</a></li>
-      <li><a href="certifications.html">Certs</a></li>
-      <li><a href="../index.html#contact">Contact</a></li>
-    </ul>
+  <!-- Navigation -->
+  <nav id="navbar" aria-label="Main Navigation">
+    <div class="nav-container">
+      <a href="../index.html" class="nav-logo" aria-label="DK.dev Home">DK<span>.dev</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="../index.html#about">About</a></li>
+        <li><a href="../index.html#skills">Skills</a></li>
+        <li><a href="../index.html#projects">Projects</a></li>
+        <li><a href="../index.html#experience">Experience</a></li>
+        <li><a href="achievements.html" class="active">Achievements</a></li>
+        <li><a href="certifications.html">Certs</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+    </div>
   </nav>
 
-  <section style="padding-top: 140px;">
-    <a href="../index.html" class="back-link">← Back to Portfolio</a>
+  <section style="padding-top: 140px;" aria-labelledby="ach-heading">
+    <a href="../index.html" class="back-link">&larr; Back to Portfolio</a>
 
     <div class="section-label">Recognition</div>
-    <h1 class="section-title reveal">Achievements</h1>
+    <h1 id="ach-heading" class="section-title reveal">Verified Achievements</h1>
+    <p class="section-desc reveal">Competitive hackathons, engineering innovation challenges, and problem-solving contests.</p>
 
     <div class="achievements-grid">
+      <!-- 1. SSN 24hr Hackathon -->
       <div class="achievement-card reveal">
         <div class="ach-icon">🥇</div>
         <div>
-          <div class="ach-title">1st Special Mention — SSN 24hr Hackathon</div>
-          <div class="ach-desc">Recognized among top performers in a competitive full-day coding marathon at SSN College of Engineering. Demonstrated strong problem-solving and rapid development skills under pressure.</div>
+          <h2 class="ach-title">1st Special Mention — SSN 24-Hour Hackathon</h2>
+          <div class="ach-desc">Recognized among top performers in a competitive full-day software hackathon at SSN College of Engineering. Built and pitched a functional application prototype under intensive time constraints.</div>
         </div>
       </div>
 
+      <!-- 2. Saveetha -->
       <div class="achievement-card reveal">
         <div class="ach-icon">🥉</div>
         <div>
-          <div class="ach-title">3rd Prize — Saveetha Engineering College</div>
-          <div class="ach-desc">Escape Room Challenge — tackled complex technical puzzles and creative problem-solving scenarios in a timed competitive environment.</div>
+          <h2 class="ach-title">3rd Prize — Saveetha Engineering College</h2>
+          <div class="ach-desc">Escape Room Technical Challenge — tackled algorithmic puzzles, rapid debugging scenarios, and critical problem solving in a timed competitive environment.</div>
         </div>
       </div>
 
+      <!-- 3. Adobe India Hackathon -->
       <div class="achievement-card reveal">
         <div class="ach-icon">🎨</div>
         <div>
-          <div class="ach-title">Participant — Adobe India Hackathon</div>
-          <div class="ach-desc">Competed in Adobe's national-level hackathon, showcasing creativity and technical skills in building design-driven applications.</div>
+          <h2 class="ach-title">Participant — Adobe India Hackathon</h2>
+          <div class="ach-desc">Competed in Adobe's national-level hackathon, demonstrating creative engineering and user-experience design in building digital product concepts.</div>
         </div>
       </div>
 
+      <!-- 4. L'Oréal Sustainability Challenge -->
       <div class="achievement-card reveal">
         <div class="ach-icon">🌿</div>
         <div>
-          <div class="ach-title">Participant — L'Oreal Sustainability Challenge</div>
-          <div class="ach-desc">Presented sustainable tech solutions addressing real-world environmental challenges in L'Oreal's global innovation challenge.</div>
+          <h2 class="ach-title">Participant — L'Oréal Sustainability Challenge</h2>
+          <div class="ach-desc">Developed and submitted technology-driven sustainability concepts addressing real-world environmental and packaging challenges in L'Oréal's global competition.</div>
         </div>
       </div>
 
+      <!-- 5. SSN Invente'25 -->
       <div class="achievement-card reveal">
         <div class="ach-icon">🚀</div>
         <div>
-          <div class="ach-title">Participant — SSN Invente'25</div>
-          <div class="ach-desc">Took part in one of the most prestigious engineering innovation competitions, presenting original project concepts and prototypes.</div>
+          <h2 class="ach-title">Participant — SSN Invente'25</h2>
+          <div class="ach-desc">Competed in SSN's prestigious technical symposium, presenting functional project architectures and engineering designs before an evaluation panel.</div>
         </div>
       </div>
 
+      <!-- 6. SVC Hackathon -->
       <div class="achievement-card reveal">
         <div class="ach-icon">💻</div>
         <div>
-          <div class="ach-title">Participant — SVC Hackathon</div>
-          <div class="ach-desc">Collaborated with a team to build and present a working solution within tight time constraints at SVC's annual hackathon event.</div>
-        </div>
-      </div>
-
-      <div class="achievement-card reveal">
-        <div class="ach-icon">⚔️</div>
-        <div>
-          <div class="ach-title">1000+ Problems — Skillrack</div>
-          <div class="ach-desc">Crossed the 1000-problem milestone on Skillrack, demonstrating consistent dedication to competitive programming and algorithmic thinking.</div>
-        </div>
-      </div>
-
-      <div class="achievement-card reveal">
-        <div class="ach-icon">🟡</div>
-        <div>
-          <div class="ach-title">Active Problem Solver — LeetCode &amp; HackerRank</div>
-          <div class="ach-desc">Maintains a regular practice routine on LeetCode and HackerRank, sharpening data structures, algorithms, and coding interview skills.</div>
+          <h2 class="ach-title">Participant — SVC Hackathon</h2>
+          <div class="ach-desc">Collaborated in team-based software prototyping, integrating frontend interfaces and backend endpoints during an intensive sprint.</div>
         </div>
       </div>
     </div>
   </section>
 
   <footer>
-    <div>© 2025 Deepakkumar B — Tamil Nadu, India</div>
-    <div>Full Stack Developer · UI/UX Designer</div>
+    <div>&copy; 2026 Deepakkumar B &middot; Full Stack Developer</div>
+    <div class="footer-links">
+      <a href="https://github.com/DK-code06" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/deepakkumar-b-1a46a62b6" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="mailto:bdeepakkumar2006@gmail.com">Email</a>
+    </div>
   </footer>
 
   <script src="../js/cursor.js"></script>

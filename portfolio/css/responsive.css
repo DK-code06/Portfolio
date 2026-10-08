@@ -1,218 +1,249 @@
 /* ============================================================
-   RESPONSIVE.CSS  —  Mobile-first, polished at every breakpoint
+   RESPONSIVE.CSS  —  Polished across all viewports
    Breakpoints:
-     xs  < 480px   (small phones)
-     sm  < 640px   (phones)
-     md  < 768px   (large phones / small tablets)
-     lg  < 1024px  (tablets / small laptops)
-     xl  < 1280px  (laptops)
+     xs  < 480px   (mobile small/medium)
+     sm  < 640px   (mobile large)
+     md  < 768px   (tablet portrait)
+     lg  < 1024px  (tablet landscape / small laptop)
+     xl  < 1280px  (standard laptop)
+     2xl ≥ 1280px  (desktop / widescreen)
    ============================================================ */
 
-/* ── TABLET / SMALL LAPTOP (≤ 1100px) — photo goes on top ── */
+/* ── TABLET / SMALL LAPTOP (≤ 1100px) ──────────────────────── */
 @media (max-width: 1100px) {
   #hero {
-    padding: 100px var(--section-pad-x) 60px;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 120px var(--section-pad-x) 60px;
   }
-  /* photo.css handles grid collapse at 1100px */
+  .hero-photo-wrap {
+    width: 360px;
+    height: 360px;
+    margin: 0 auto;
+    order: -1;
+  }
+  .photo-frame { width: 260px; height: 260px; }
+  .orbit-1 { width: 320px; height: 320px; }
+  .orbit-2 { width: 380px; height: 380px; }
+  .orbit-3 { display: none; }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+  .project-visual {
+    height: 240px;
+  }
 }
 
-/* ── LARGE PHONE / SMALL TABLET (≤ 768px) ──────────────────── */
+/* ── LARGE PHONE / TABLET (≤ 768px) ────────────────────────── */
 @media (max-width: 768px) {
   :root {
-    --section-pad-x: 24px;
-    --section-pad-y: 72px;
+    --section-pad-x: 20px;
+    --section-pad-y: 64px;
   }
 
   /* ---- NAV ---- */
   #navbar {
-    padding: 14px 20px;
+    padding: 16px 20px;
   }
   .nav-toggle {
     display: flex;
-    z-index: 200;
-    position: relative;
   }
   .nav-links {
     display: flex;
     position: fixed;
     inset: 0;
-    background: rgba(5, 8, 16, 0.98);
+    background: rgba(6, 9, 19, 0.98);
     backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 36px;
+    gap: 24px;
     z-index: 150;
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-16px);
-    transition: opacity 0.35s ease, transform 0.35s ease;
+    transform: translateY(-12px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
   }
   .nav-links.open {
     opacity: 1;
     pointer-events: all;
     transform: translateY(0);
   }
-  .nav-links li { width: 100%; text-align: center; }
-  .nav-links a {
-    font-size: 1.3rem;
-    letter-spacing: 0.18em;
-    display: block;
-    padding: 10px 0;
+  .nav-links li {
+    width: 100%;
+    text-align: center;
   }
-  /* Decorative divider in mobile menu */
-  .nav-links li + li {
-    border-top: 1px solid var(--border);
-    padding-top: 8px;
+  .nav-links a {
+    font-size: 1.15rem;
+    letter-spacing: 0.16em;
+    display: inline-block;
+    padding: 8px 16px;
+  }
+  .nav-cta {
+    margin-left: 0 !important;
+    margin-top: 8px;
+    font-size: 1rem !important;
   }
 
   /* ---- HERO ---- */
   #hero {
-    padding: 100px 24px 56px;
+    padding: 110px 20px 48px;
     min-height: auto;
   }
-  .hero-tag { font-size: 0.68rem; }
-  .hero-bio  { font-size: 0.85rem; }
-  .hero-cta  { gap: 12px; }
-  .btn       { padding: 13px 26px; font-size: 0.74rem; }
-  .hero-stats { gap: 24px; margin-top: 36px; }
-  .stat-num  { font-size: 1.6rem; }
+  .hero-photo-wrap {
+    width: 300px;
+    height: 300px;
+  }
+  .photo-frame { width: 220px; height: 220px; }
+  .orbit-1 { width: 270px; height: 270px; }
+  .orbit-2 { width: 320px; height: 320px; }
+  .orbit-dot { width: 28px; height: 28px; font-size: 0.75rem; }
+  .info-chip { font-size: 0.65rem; padding: 6px 12px; }
+  .chip-location { left: -10px; bottom: 10px; }
+  .chip-status { right: -10px; top: 16px; }
 
-  /* ---- SECTION LABELS ---- */
-  .section-title { margin-bottom: 40px; }
+  .hero-name {
+    font-size: clamp(2.6rem, 10vw, 3.8rem);
+  }
+  .hero-bio {
+    font-size: 0.95rem;
+  }
+  .hero-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 36px;
+  }
 
-  /* ---- SKILLS ---- */
+  /* ---- SECTIONS ---- */
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 36px;
+  }
+
   .skills-grid {
     grid-template-columns: 1fr;
     gap: 16px;
   }
 
-  /* ---- PROJECTS ---- */
-  .projects-grid {
+  .experience-edu-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .profiles-row {
     grid-template-columns: 1fr;
     gap: 16px;
   }
 
-  /* ---- TIMELINE ---- */
-  .timeline::before { left: 14px; }
-  .timeline-item    { padding-left: 44px; padding-bottom: 36px; }
-  .timeline-dot     { left: 6px; width: 16px; height: 16px; }
-
-  /* ---- PROFILES ---- */
-  .profiles-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-  }
-  .profile-card { min-width: unset; padding: 20px 16px; }
-  .profile-icon { font-size: 1.5rem; }
-  .profile-name { font-size: 0.85rem; }
-
-  /* ---- ACHIEVEMENTS ---- */
-  .achievements-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  /* ---- CERTS ---- */
-  .certs-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
+  .project-card {
+    padding: 24px;
   }
 
   /* ---- CONTACT ---- */
-  #contact { padding-top: 72px; }
-  .contact-email { word-break: break-all; }
+  #contact {
+    padding-bottom: 80px;
+  }
   .contact-links {
     flex-direction: column;
     align-items: center;
-    gap: 12px;
   }
-  .contact-link { width: 100%; max-width: 320px; justify-content: center; }
+  .contact-link {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  /* ---- MODAL ---- */
+  .modal-container {
+    padding: 28px 20px;
+  }
+  .modal-title {
+    font-size: 1.35rem;
+  }
 
   /* ---- FOOTER ---- */
   footer {
     flex-direction: column;
-    gap: 10px;
     text-align: center;
-    padding: 24px;
+    gap: 12px;
   }
 }
 
-/* ── PHONE (≤ 640px) ──────────────────────────────────────── */
-@media (max-width: 640px) {
+/* ── SMALL PHONES (≤ 480px) ────────────────────────────────── */
+@media (max-width: 480px) {
   :root {
-    --section-pad-x: 20px;
-    --section-pad-y: 64px;
+    --section-pad-x: 16px;
+    --section-pad-y: 56px;
   }
 
-  /* Hero tighter */
-  #hero { padding: 100px 20px 48px; }
-  .hero-name { letter-spacing: -0.02em; line-height: 1; }
-  .role-badge { font-size: 0.68rem; padding: 7px 14px; }
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+  .hero-cta .btn {
+    width: 100%;
+  }
 
-  /* Stats row wrap */
-  .hero-stats { gap: 20px; }
-  .stat-num   { font-size: 1.4rem; }
-  .stat-label { font-size: 0.6rem; }
+  .hero-photo-wrap {
+    width: 260px;
+    height: 260px;
+  }
+  .photo-frame { width: 190px; height: 190px; }
+  .orbit-1 { width: 230px; height: 230px; }
+  .orbit-2 { display: none; }
 
-  /* Cards tighter */
-  .skill-card,
-  .project-card { padding: 24px 20px; }
-  .project-title { font-size: 1rem; }
-
-  /* Profiles stack */
-  .profiles-row {
+  .project-visual {
+    height: 220px;
+    padding: 14px;
+  }
+  .kanban-board {
     grid-template-columns: 1fr;
   }
-  .profile-card { display: flex; align-items: center; gap: 16px; text-align: left; padding: 18px 20px; }
-  .profile-icon { margin-bottom: 0; font-size: 1.6rem; }
+  .kanban-col:nth-child(n+2) {
+    display: none;
+  }
 
-  /* Achievement cards */
-  .achievement-card { padding: 20px 18px; }
+  .timeline-item {
+    padding-left: 36px;
+  }
+  .timeline::before {
+    left: 10px;
+  }
+  .timeline-dot {
+    left: 4px;
+    width: 13px;
+    height: 13px;
+  }
 
-  /* Section label */
-  .section-label { font-size: 0.65rem; }
+  .modal-actions {
+    flex-direction: column;
+  }
+  .modal-actions .btn {
+    width: 100%;
+  }
 }
 
-/* ── SMALL PHONES (≤ 480px) ───────────────────────────────── */
-@media (max-width: 480px) {
-  .hero-cta { flex-direction: column; }
-  .btn      { width: 100%; text-align: center; }
-
-  .contact-links { width: 100%; }
-  .contact-link  { width: 100%; }
-
-  .nav-links a { font-size: 1.1rem; }
-
-  /* Bring section title down a notch */
-  .section-title { font-size: clamp(1.6rem, 7vw, 2.4rem); margin-bottom: 32px; }
-
-  /* Timeline even tighter */
-  .timeline-body { font-size: 0.78rem; }
-  .timeline-title { font-size: 0.95rem; }
-}
-
-/* ── ENSURE CURSOR HIDDEN ON TOUCH DEVICES ─────────────────── */
+/* ── TOUCH DEVICE CURSOR RESET ─────────────────────────────── */
 @media (hover: none) and (pointer: coarse) {
   .cursor,
-  .cursor-ring { display: none !important; }
-  body { cursor: auto !important; }
-  * { cursor: auto !important; }
-}
-
-/* ── DESKTOP REFINEMENTS (≥ 1280px) ────────────────────────── */
-@media (min-width: 1280px) {
-  :root {
-    --section-pad-x: 80px;
-    --section-pad-y: 110px;
+  .cursor-ring {
+    display: none !important;
   }
-  .projects-grid { grid-template-columns: repeat(3, 1fr); }
-  .skills-grid   { grid-template-columns: repeat(4, 1fr); }
-}
-
-/* ── LARGE DESKTOP (≥ 1600px) ──────────────────────────────── */
-@media (min-width: 1600px) {
-  :root { --section-pad-x: 120px; }
-  .hero-content { max-width: 1000px; }
+  body, * {
+    cursor: auto !important;
+  }
+  .btn, .contact-link, .profile-card, .back-link, .nav-toggle {
+    cursor: pointer !important;
+  }
 }

@@ -1,8 +1,9 @@
-/* ---- Hero base (layout handled by photo.css) ---- */
+/* ---- Hero base ---- */
 #hero {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   z-index: 2;
+  min-height: 100vh;
 }
 
 #particleCanvas {
@@ -13,35 +14,36 @@
   z-index: 1;
 }
 
-/* ---- Orbs ---- */
+/* ---- Subtle Ambient Orbs ---- */
 .hero-orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(80px);
+  filter: blur(100px);
   pointer-events: none;
+  opacity: 0.6;
 }
 .orb1 {
-  width: min(500px, 80vw); height: min(500px, 80vw);
-  background: rgba(0, 245, 196, 0.08);
-  top: -100px; right: -100px;
-  animation: floatOrb1 8s ease-in-out infinite;
+  width: min(450px, 75vw); height: min(450px, 75vw);
+  background: radial-gradient(circle, rgba(0, 240, 192, 0.12) 0%, transparent 70%);
+  top: -80px; right: -60px;
+  animation: floatOrb1 12s ease-in-out infinite;
 }
 .orb2 {
   width: min(400px, 70vw); height: min(400px, 70vw);
-  background: rgba(123, 108, 255, 0.08);
-  bottom: -100px; left: -50px;
-  animation: floatOrb2 10s ease-in-out infinite;
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, transparent 70%);
+  bottom: -60px; left: -40px;
+  animation: floatOrb2 14s ease-in-out infinite;
 }
 .orb3 {
-  width: min(300px, 60vw); height: min(300px, 60vw);
-  background: rgba(255, 94, 126, 0.06);
-  top: 40%; left: 40%;
-  animation: floatOrb3 12s ease-in-out infinite;
+  width: min(280px, 50vw); height: min(280px, 50vw);
+  background: radial-gradient(circle, rgba(244, 63, 94, 0.08) 0%, transparent 70%);
+  top: 35%; left: 35%;
+  animation: floatOrb3 16s ease-in-out infinite;
 }
 
 /* ---- Hero content ---- */
 .hero-content {
-  max-width: 900px;
+  max-width: 680px;
   position: relative;
   z-index: 2;
   flex: 1;
@@ -54,68 +56,85 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(0, 245, 196, 0.08);
-  border: 1px solid rgba(0, 245, 196, 0.2);
+  background: var(--accent-muted);
+  border: 1px solid rgba(0, 240, 192, 0.25);
   padding: 6px 16px;
-  border-radius: 100px;
-  font-size: 0.72rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
-  margin-bottom: 28px;
+  margin-bottom: 24px;
   width: fit-content;
   animation: fadeUp 0.8s ease forwards;
   opacity: 0;
 }
-.blink-dot { animation: blink 1.5s infinite; }
+.blink-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+  animation: blink 1.8s infinite;
+}
 
 .hero-name {
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 9vw, 7rem);
+  font-size: clamp(3rem, 7.5vw, 5.8rem);
   font-weight: 800;
-  line-height: 0.95;
-  letter-spacing: -0.03em;
-  margin-bottom: 24px;
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+  margin-bottom: 20px;
   animation: fadeUp 0.8s 0.1s ease forwards;
   opacity: 0;
 }
-.hero-name .line1 { display: block; color: var(--text); }
+.hero-name .line1 {
+  display: block;
+  color: var(--text);
+}
 .hero-name .line2 {
   display: block;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(255,255,255,0.3);
+  background: linear-gradient(135deg, #ffffff 30%, var(--muted) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-roles {
   display: flex;
-  gap: 12px;
+  gap: 10px;
   flex-wrap: wrap;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
   animation: fadeUp 0.8s 0.2s ease forwards;
   opacity: 0;
 }
 .role-badge {
-  padding: 8px 18px;
+  padding: 7px 16px;
   border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
   font-size: 0.75rem;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: 600;
   white-space: nowrap;
 }
-.role-badge.primary   { background: var(--accent); color: #000; }
+.role-badge.primary {
+  background: var(--accent);
+  color: #040810;
+  box-shadow: 0 2px 14px rgba(0, 240, 192, 0.25);
+}
 .role-badge.secondary {
-  background: rgba(123, 108, 255, 0.15);
-  border: 1px solid rgba(123, 108, 255, 0.4);
-  color: var(--accent2);
+  background: rgba(99, 102, 241, 0.12);
+  border: 1px solid rgba(99, 102, 241, 0.35);
+  color: #a5b4fc;
 }
 
 .hero-bio {
-  max-width: 560px;
-  font-size: 0.88rem;
-  line-height: 1.85;
-  color: var(--muted);
-  margin-bottom: 40px;
+  max-width: 580px;
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  margin-bottom: 36px;
   animation: fadeUp 0.8s 0.3s ease forwards;
   opacity: 0;
 }
@@ -124,40 +143,51 @@
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
+  align-items: center;
   animation: fadeUp 0.8s 0.4s ease forwards;
   opacity: 0;
 }
 
-/* ---- Stats ---- */
+/* ---- Verified Hero Stats ---- */
 .hero-stats {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
   position: relative;
   z-index: 2;
-  margin-top: 60px;
+  margin-top: 52px;
   padding-top: 32px;
   border-top: 1px solid var(--border);
   animation: fadeUp 0.8s 0.5s ease forwards;
   opacity: 0;
 }
-.stat { text-align: left; }
+.stat {
+  text-align: left;
+}
 .stat-num {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 1.85rem;
   font-weight: 800;
   color: var(--accent);
   display: block;
-  line-height: 1;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
 }
-.stat-num[data-count="1000"]::after { content: '+'; }
-.stat-num[data-count="5"]::after   { content: '+'; }
-.stat-num[data-count="8"]::after   { content: '+'; }
+.stat-text {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text);
+  display: block;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
 .stat-label {
-  font-size: 0.62rem;
-  letter-spacing: 0.14em;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
   color: var(--muted);
   text-transform: uppercase;
-  margin-top: 4px;
+  margin-top: 6px;
   display: block;
 }

@@ -5,8 +5,9 @@
   const wrap  = document.querySelector('.hero-photo-wrap');
   if (!frame || !wrap) return;
 
-  // Only on non-touch devices
-  if (window.matchMedia('(hover: none)').matches) return;
+  // Disable on touch devices or if user prefers reduced motion
+  if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
   let bounds;
   let rafId;
@@ -26,14 +27,15 @@
   });
 
   wrap.addEventListener('mousemove', (e) => {
+    if (!bounds) refreshBounds();
     const cx = bounds.left + bounds.width  / 2;
     const cy = bounds.top  + bounds.height / 2;
     const dx = (e.clientX - cx) / (bounds.width  / 2);   // -1 to 1
     const dy = (e.clientY - cy) / (bounds.height / 2);   // -1 to 1
 
-    // Max tilt 18deg
-    targetX = -dy * 18;
-    targetY =  dx * 18;
+    // Controlled tilt: max 14deg
+    targetX = -dy * 14;
+    targetY =  dx * 14;
   });
 
   wrap.addEventListener('mouseleave', () => {
@@ -42,20 +44,18 @@
   });
 
   function animateTilt() {
-    // Smooth lerp
     currentX += (targetX - currentX) * 0.10;
     currentY += (targetY - currentY) * 0.10;
 
-    const scale = Math.abs(targetX) > 1 || Math.abs(targetY) > 1 ? 1.04 : 1;
+    const scale = Math.abs(targetX) > 1 || Math.abs(targetY) > 1 ? 1.03 : 1;
 
     frame.style.transform =
-      `perspective(600px) rotateX(${currentX}deg) rotateY(${currentY}deg) scale(${scale})`;
+      `perspective(700px) rotateX(${currentX.toFixed(2)}deg) rotateY(${currentY.toFixed(2)}deg) scale(${scale})`;
 
-    // Also slightly shift glow
     const glow = wrap.querySelector('.photo-glow');
     if (glow) {
       glow.style.transform =
-        `translate(${currentY * 0.6}px, ${-currentX * 0.6}px)`;
+        `translate(${(currentY * 0.4).toFixed(2)}px, ${(-currentX * 0.4).toFixed(2)}px)`;
     }
 
     if (Math.abs(currentX) > 0.05 || Math.abs(currentY) > 0.05 ||
@@ -63,30 +63,23 @@
       rafId = requestAnimationFrame(animateTilt);
     } else {
       frame.style.transform = '';
+      if (glow) glow.style.transform = '';
     }
   }
 
   // ── Parallax on orbit rings ──────────────────────────────
-  document.addEventListener('mousemove', (e) => {
+  window.addEventListener('mousemove', (e) => {
     const orbits = document.querySelectorAll('.orbit');
+    if (!orbits.length) return;
     const cx = window.innerWidth  / 2;
     const cy = window.innerHeight / 2;
     const dx = (e.clientX - cx) / cx;
     const dy = (e.clientY - cy) / cy;
 
     orbits.forEach((o, i) => {
-      const depth = (i + 1) * 6;
+      const depth = (i + 1) * 4;
       o.style.transform =
-        `translate(calc(-50% + ${dx * depth}px), calc(-50% + ${dy * depth}px))`;
+        `translate(calc(-50% + ${(dx * depth).toFixed(1)}px), calc(-50% + ${(dy * depth).toFixed(1)}px))`;
     });
   }, { passive: true });
-
-  // ── Reveal photo wrap with a slight delay ────────────────
-  const photoWrap = document.querySelector('.hero-photo-wrap');
-  if (photoWrap) {
-    // Already animated via CSS opacity/animation, just ensure it's visible
-    setTimeout(() => {
-      photoWrap.style.opacity = '';
-    }, 1400);
-  }
 })();

@@ -6,6 +6,7 @@
       title: 'Task Management & Productivity Platform',
       category: 'Productivity & AI Platform',
       status: 'Live & Open-Source',
+      image: 'images/projects/task-management.png',
       overview: 'A full-stack collaborative task and project management platform built to orchestrate team workflows, track granular productivity metrics, and automate task decomposition using Google Gemini AI.',
       techStack: [
         'React', 'Vite', 'Node.js', 'Express.js', 'MongoDB', 'Mongoose',
@@ -27,6 +28,7 @@
       title: 'QuestLearn — Gamified Learning & Coding Platform',
       category: 'EdTech & Gamification',
       status: 'Live & Open-Source',
+      image: 'images/projects/questlearn.png',
       overview: 'A gamified Learning Management System combining structured courses, interactive algorithmic challenges, competitive programming battles, and RPG-style progression.',
       techStack: [
         'React', 'TypeScript', 'Vite', 'Node.js', 'Express.js', 'MongoDB',
@@ -48,6 +50,7 @@
       title: 'SCMS — Enterprise Management System',
       category: 'Enterprise SaaS & Systems',
       status: 'Live Platform',
+      image: 'images/projects/scms.png',
       overview: 'A robust enterprise operations platform built to manage organizational hierarchy, automated attendance, payroll computation, leave lifecycles, and OCR-powered document processing.',
       techStack: [
         'PostgreSQL', 'Node.js', 'Express.js', 'TypeScript', 'Next.js / React',
@@ -69,6 +72,7 @@
       title: 'Reminisce — Full-Stack Social Blogging Platform',
       category: 'Social Media & Content',
       status: 'Live & Open-Source',
+      image: 'images/projects/reminisce.png',
       overview: 'A full-featured social publishing platform featuring rich multimedia blogging, interactive nested community discussions, social graphs, and personalized content discovery.',
       techStack: [
         'React', 'TypeScript', 'Vite', 'Node.js', 'Express.js', 'MongoDB',
@@ -108,6 +112,7 @@
     const overviewEl = document.getElementById('modalOverview');
     const archEl = document.getElementById('modalArch');
     const challengesEl = document.getElementById('modalChallenges');
+    const previewImg = document.getElementById('modalPreviewImg');
 
     if (categoryEl) categoryEl.textContent = data.category;
     if (statusEl) statusEl.textContent = data.status;
@@ -115,6 +120,10 @@
     if (overviewEl) overviewEl.textContent = data.overview;
     if (archEl) archEl.textContent = data.architecture;
     if (challengesEl) challengesEl.textContent = data.challenges;
+    if (previewImg && data.image) {
+      previewImg.src = data.image;
+      previewImg.alt = data.title;
+    }
 
     // Tech tags
     const tagsContainer = document.getElementById('modalTechTags');

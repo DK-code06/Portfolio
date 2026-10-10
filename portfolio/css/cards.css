@@ -140,11 +140,17 @@
   border-color: var(--neutral-800);
 }
 
+.project-banner-thumb[data-modal-target] {
+  cursor: pointer;
+}
+
 .project-banner-thumb img,
 .project-banner-thumb .thumb-mockup {
   height: 100%;
   width: 100%;
   object-fit: cover;
+  object-position: top center;
+  display: block;
   transition: transform 0.5s ease-out;
 }
 .high-tech-card:hover .project-banner-thumb img,

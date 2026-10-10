@@ -1,13 +1,12 @@
-// scroll.js — intersection observer for .reveal elements
+// scroll.js — Intersection Observer for .reveal-on-scroll elements
 
 (function () {
-  // If user prefers reduced motion, elements are already visible via CSS
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('visible'));
+    document.querySelectorAll('.reveal-on-scroll').forEach((el) => el.classList.add('visible'));
     return;
   }
 
-  const reveals = document.querySelectorAll('.reveal');
+  const reveals = document.querySelectorAll('.reveal-on-scroll');
   if (!reveals.length) return;
 
   const observer = new IntersectionObserver(
@@ -19,7 +18,7 @@
         }
       });
     },
-    { threshold: 0.08, rootMargin: '0px 0px -20px 0px' }
+    { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
   );
 
   reveals.forEach((el) => observer.observe(el));

@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Achievements — Deepakkumar B</title>
-  <meta name="description" content="Verified technical hackathons and competitive achievements by Deepakkumar B."/>
-  
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Achievements | Deepakkumar B</title>
+  <meta name="description" content="Verified hackathons, awards, and competitive programming achievements by Deepakkumar B."/>
+
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 
   <link rel="stylesheet" href="../css/reset.css"/>
   <link rel="stylesheet" href="../css/variables.css"/>
@@ -20,105 +34,132 @@
   <link rel="stylesheet" href="../css/animations.css"/>
   <link rel="stylesheet" href="../css/responsive.css"/>
 </head>
-<body>
+<body class="font-sans antialiased relative min-h-screen">
 
-  <div class="cursor" id="cursor" aria-hidden="true"></div>
-  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+  <div aria-hidden="true" class="noise-overlay"></div>
+  <canvas id="techCanvas" aria-hidden="true"></canvas>
+  <div id="scrollProgress" aria-hidden="true"></div>
+  <div id="spotlightOverlay" aria-hidden="true"></div>
 
-  <!-- Navigation -->
-  <nav id="navbar" aria-label="Main Navigation">
-    <div class="nav-container">
-      <a href="../index.html" class="nav-logo" aria-label="DK.dev Home">DK<span>.dev</span></a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="../index.html#about">About</a></li>
-        <li><a href="../index.html#skills">Skills</a></li>
-        <li><a href="../index.html#projects">Projects</a></li>
-        <li><a href="../index.html#experience">Experience</a></li>
-        <li><a href="achievements.html" class="active">Achievements</a></li>
-        <li><a href="certifications.html">Certs</a></li>
-        <li><a href="../index.html#contact">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <section style="padding-top: 140px;" aria-labelledby="ach-heading">
-    <a href="../index.html" class="back-link">&larr; Back to Portfolio</a>
-
-    <div class="section-label">Recognition</div>
-    <h1 id="ach-heading" class="section-title reveal">Verified Achievements</h1>
-    <p class="section-desc reveal">Competitive hackathons, engineering innovation challenges, and problem-solving contests.</p>
-
-    <div class="achievements-grid">
-      <!-- 1. SSN 24hr Hackathon -->
-      <div class="achievement-card reveal">
-        <div class="ach-icon">🥇</div>
-        <div>
-          <h2 class="ach-title">1st Special Mention — SSN 24-Hour Hackathon</h2>
-          <div class="ach-desc">Recognized among top performers in a competitive full-day software hackathon at SSN College of Engineering. Built and pitched a functional application prototype under intensive time constraints.</div>
-        </div>
+  <!-- Header -->
+  <header id="siteHeader">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a class="nav-logo-text" href="../index.html">Deepakkumar B</a>
+        <nav class="nav-capsule-links" aria-label="Main Navigation">
+          <a class="nav-capsule-item" href="../index.html#education">Education</a>
+          <a class="nav-capsule-item" href="../index.html#projects">Projects</a>
+          <a class="nav-capsule-item" href="../index.html#skills">Skills</a>
+          <a class="nav-capsule-item active" href="achievements.html">Achievements</a>
+          <a class="nav-capsule-item" href="certifications.html">Certs</a>
+          <a class="nav-capsule-item" href="../index.html#contact">Contact</a>
+        </nav>
       </div>
 
-      <!-- 2. Saveetha -->
-      <div class="achievement-card reveal">
-        <div class="ach-icon">🥉</div>
-        <div>
-          <h2 class="ach-title">3rd Prize — Saveetha Engineering College</h2>
-          <div class="ach-desc">Escape Room Technical Challenge — tackled algorithmic puzzles, rapid debugging scenarios, and critical problem solving in a timed competitive environment.</div>
-        </div>
-      </div>
-
-      <!-- 3. Adobe India Hackathon -->
-      <div class="achievement-card reveal">
-        <div class="ach-icon">🎨</div>
-        <div>
-          <h2 class="ach-title">Participant — Adobe India Hackathon</h2>
-          <div class="ach-desc">Competed in Adobe's national-level hackathon, demonstrating creative engineering and user-experience design in building digital product concepts.</div>
-        </div>
-      </div>
-
-      <!-- 4. L'Oréal Sustainability Challenge -->
-      <div class="achievement-card reveal">
-        <div class="ach-icon">🌿</div>
-        <div>
-          <h2 class="ach-title">Participant — L'Oréal Sustainability Challenge</h2>
-          <div class="ach-desc">Developed and submitted technology-driven sustainability concepts addressing real-world environmental and packaging challenges in L'Oréal's global competition.</div>
-        </div>
-      </div>
-
-      <!-- 5. SSN Invente'25 -->
-      <div class="achievement-card reveal">
-        <div class="ach-icon">🚀</div>
-        <div>
-          <h2 class="ach-title">Participant — SSN Invente'25</h2>
-          <div class="ach-desc">Competed in SSN's prestigious technical symposium, presenting functional project architectures and engineering designs before an evaluation panel.</div>
-        </div>
-      </div>
-
-      <!-- 6. SVC Hackathon -->
-      <div class="achievement-card reveal">
-        <div class="ach-icon">💻</div>
-        <div>
-          <h2 class="ach-title">Participant — SVC Hackathon</h2>
-          <div class="ach-desc">Collaborated in team-based software prototyping, integrating frontend interfaces and backend endpoints during an intensive sprint.</div>
-        </div>
+      <div class="nav-actions">
+        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle theme">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
       </div>
     </div>
-  </section>
+  </header>
 
-  <footer>
+  <main class="max-w-6xl py-24" style="padding-top: 7rem;">
+    <div style="margin-bottom: 2rem;">
+      <a href="../index.html" class="btn-navena-outline" style="padding: 0.5rem 1rem; font-size: 0.8125rem; margin-bottom: 1.5rem; display: inline-flex; align-items: center; gap: 0.375rem;">
+        &larr; Back to Portfolio
+      </a>
+      <span class="section-meta-index">RECOGNITION //</span>
+      <h1 class="section-heading-title">Verified Achievements &amp; Hackathons</h1>
+      <p class="section-heading-desc">Competitive hackathons, algorithmic escape rooms, and technical symposium awards.</p>
+    </div>
+
+    <div class="skills-responsive-grid">
+      <div class="high-tech-card" style="padding: 1.5rem;">
+        <div class="card-spotlight-layer" aria-hidden="true"></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 0.75rem; font-weight: 700; color: #a1a1aa;">SSN College of Engineering</span>
+          <span style="font-size: 0.75rem; font-weight: 700; color: #f59e0b;">1st Special Mention</span>
+        </div>
+        <h2 style="font-family: var(--font-outfit); font-size: 1.125rem; font-weight: 700; color: var(--foreground);">SSN 24-Hour Hackathon</h2>
+        <p style="font-size: 0.875rem; color: var(--foreground-muted); margin-top: 6px; line-height: 1.6;">
+          Built and presented a fully working software prototype under tight 24-hour constraints, recognized by industry evaluators for problem-solving speed and architectural design.
+        </p>
+      </div>
+
+      <div class="high-tech-card" style="padding: 1.5rem;">
+        <div class="card-spotlight-layer" aria-hidden="true"></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 0.75rem; font-weight: 700; color: #a1a1aa;">Saveetha Engineering College</span>
+          <span style="font-size: 0.75rem; font-weight: 700; color: #f59e0b;">3rd Prize</span>
+        </div>
+        <h2 style="font-family: var(--font-outfit); font-size: 1.125rem; font-weight: 700; color: var(--foreground);">Escape Room Technical Challenge</h2>
+        <p style="font-size: 0.875rem; color: var(--foreground-muted); margin-top: 6px; line-height: 1.6;">
+          Solved complex computational puzzles, time-pressured debugging scenarios, and critical algorithmic reasoning challenges in a competitive arena.
+        </p>
+      </div>
+
+      <div class="high-tech-card" style="padding: 1.5rem;">
+        <div class="card-spotlight-layer" aria-hidden="true"></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 0.75rem; font-weight: 700; color: #a1a1aa;">Adobe India</span>
+          <span style="font-size: 0.75rem; font-weight: 700; color: #34d399;">Participant</span>
+        </div>
+        <h2 style="font-family: var(--font-outfit); font-size: 1.125rem; font-weight: 700; color: var(--foreground);">Adobe India National Hackathon</h2>
+        <p style="font-size: 0.875rem; color: var(--foreground-muted); margin-top: 6px; line-height: 1.6;">
+          Competed in Adobe's national hackathon event, demonstrating creative digital user interfaces and technical capabilities.
+        </p>
+      </div>
+
+      <div class="high-tech-card" style="padding: 1.5rem;">
+        <div class="card-spotlight-layer" aria-hidden="true"></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 0.75rem; font-weight: 700; color: #a1a1aa;">L'Oréal Global</span>
+          <span style="font-size: 0.75rem; font-weight: 700; color: #34d399;">Participant</span>
+        </div>
+        <h2 style="font-family: var(--font-outfit); font-size: 1.125rem; font-weight: 700; color: var(--foreground);">L'Oréal Sustainability Challenge</h2>
+        <p style="font-size: 0.875rem; color: var(--foreground-muted); margin-top: 6px; line-height: 1.6;">
+          Presented technology-driven environmental solutions addressing real-world sustainable packaging and supply-chain challenges.
+        </p>
+      </div>
+
+      <div class="high-tech-card" style="padding: 1.5rem;">
+        <div class="card-spotlight-layer" aria-hidden="true"></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 0.75rem; font-weight: 700; color: #a1a1aa;">SSN College</span>
+          <span style="font-size: 0.75rem; font-weight: 700; color: #34d399;">Participant</span>
+        </div>
+        <h2 style="font-family: var(--font-outfit); font-size: 1.125rem; font-weight: 700; color: var(--foreground);">SSN Invente'25 Technical Symposium</h2>
+        <p style="font-size: 0.875rem; color: var(--foreground-muted); margin-top: 6px; line-height: 1.6;">
+          Presented engineering prototypes and original project designs before an evaluation panel of technical researchers and engineers.
+        </p>
+      </div>
+
+      <div class="high-tech-card" style="padding: 1.5rem;">
+        <div class="card-spotlight-layer" aria-hidden="true"></div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <span style="font-size: 0.75rem; font-weight: 700; color: #a1a1aa;">SVC Engineering</span>
+          <span style="font-size: 0.75rem; font-weight: 700; color: #34d399;">Participant</span>
+        </div>
+        <h2 style="font-family: var(--font-outfit); font-size: 1.125rem; font-weight: 700; color: var(--foreground);">SVC Hackathon Challenge</h2>
+        <p style="font-size: 0.875rem; color: var(--foreground-muted); margin-top: 6px; line-height: 1.6;">
+          Collaborated on rapid sprint development, integrating client interfaces with server endpoints under stringent contest timelines.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer id="siteFooter">
     <div>&copy; 2026 Deepakkumar B &middot; Full Stack Developer</div>
-    <div class="footer-links">
+    <div class="footer-social-links">
       <a href="https://github.com/DK-code06" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://www.linkedin.com/in/deepakkumar-b-1a46a62b6" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="mailto:bdeepakkumar2006@gmail.com">Email</a>
     </div>
   </footer>
 
-  <script src="../js/cursor.js"></script>
-  <script src="../js/scroll.js"></script>
-  <script src="../js/nav.js"></script>
+  <script src="../js/theme.js"></script>
+  <script src="../js/particles.js"></script>
+  <script src="../js/spotlight.js"></script>
 </body>
 </html>

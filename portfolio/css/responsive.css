@@ -1,249 +1,65 @@
 /* ============================================================
-   RESPONSIVE.CSS  —  Polished across all viewports
-   Breakpoints:
-     xs  < 480px   (mobile small/medium)
-     sm  < 640px   (mobile large)
-     md  < 768px   (tablet portrait)
-     lg  < 1024px  (tablet landscape / small laptop)
-     xl  < 1280px  (standard laptop)
-     2xl ≥ 1280px  (desktop / widescreen)
+   RESPONSIVE.CSS  —  Viewport Polish from 320px Mobile to 1920px Desktop
    ============================================================ */
 
-/* ── TABLET / SMALL LAPTOP (≤ 1100px) ──────────────────────── */
-@media (max-width: 1100px) {
-  #hero {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    padding: 120px var(--section-pad-x) 60px;
+@media (max-width: 640px) {
+  .hero-main-title {
+    font-size: 2rem;
   }
-  .hero-photo-wrap {
-    width: 360px;
-    height: 360px;
-    margin: 0 auto;
-    order: -1;
+  .stats-strip-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
   }
-  .photo-frame { width: 260px; height: 260px; }
-  .orbit-1 { width: 320px; height: 320px; }
-  .orbit-2 { width: 380px; height: 380px; }
-  .orbit-3 { display: none; }
-
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .stat-metric-card {
+    padding: 0.875rem 1rem;
   }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
+  .stat-main-number {
+    font-size: 1.5rem;
   }
-
-  .project-card {
-    grid-template-columns: 1fr;
-    gap: 28px;
+  .avatar-circle-frame {
+    height: 13rem;
+    width: 13rem;
   }
-  .project-visual {
-    height: 240px;
+  .project-banner-thumb {
+    height: 9.5rem;
+  }
+  .contact-links-grid {
+    flex-direction: column;
+  }
+  .contact-action-btn {
+    width: 100%;
   }
 }
 
-/* ── LARGE PHONE / TABLET (≤ 768px) ────────────────────────── */
-@media (max-width: 768px) {
-  :root {
-    --section-pad-x: 20px;
-    --section-pad-y: 64px;
-  }
-
-  /* ---- NAV ---- */
-  #navbar {
-    padding: 16px 20px;
-  }
-  .nav-toggle {
-    display: flex;
-  }
-  .nav-links {
-    display: flex;
-    position: fixed;
-    inset: 0;
-    background: rgba(6, 9, 19, 0.98);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
-    z-index: 150;
-    opacity: 0;
-    pointer-events: none;
-    transform: translateY(-12px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
-  .nav-links.open {
-    opacity: 1;
-    pointer-events: all;
-    transform: translateY(0);
-  }
-  .nav-links li {
-    width: 100%;
-    text-align: center;
-  }
-  .nav-links a {
-    font-size: 1.15rem;
-    letter-spacing: 0.16em;
-    display: inline-block;
-    padding: 8px 16px;
-  }
-  .nav-cta {
-    margin-left: 0 !important;
-    margin-top: 8px;
-    font-size: 1rem !important;
-  }
-
-  /* ---- HERO ---- */
-  #hero {
-    padding: 110px 20px 48px;
-    min-height: auto;
-  }
-  .hero-photo-wrap {
-    width: 300px;
-    height: 300px;
-  }
-  .photo-frame { width: 220px; height: 220px; }
-  .orbit-1 { width: 270px; height: 270px; }
-  .orbit-2 { width: 320px; height: 320px; }
-  .orbit-dot { width: 28px; height: 28px; font-size: 0.75rem; }
-  .info-chip { font-size: 0.65rem; padding: 6px 12px; }
-  .chip-location { left: -10px; bottom: 10px; }
-  .chip-status { right: -10px; top: 16px; }
-
-  .hero-name {
-    font-size: clamp(2.6rem, 10vw, 3.8rem);
-  }
-  .hero-bio {
-    font-size: 0.95rem;
-  }
-  .hero-stats {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin-top: 36px;
-  }
-
-  /* ---- SECTIONS ---- */
-  .section-title {
-    font-size: 2.2rem;
-    margin-bottom: 36px;
-  }
-
-  .skills-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .experience-edu-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .profiles-row {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-
-  .project-card {
-    padding: 24px;
-  }
-
-  /* ---- CONTACT ---- */
-  #contact {
-    padding-bottom: 80px;
-  }
-  .contact-links {
-    flex-direction: column;
-    align-items: center;
-  }
-  .contact-link {
-    width: 100%;
-    max-width: 340px;
-  }
-
-  /* ---- MODAL ---- */
-  .modal-container {
-    padding: 28px 20px;
-  }
-  .modal-title {
-    font-size: 1.35rem;
-  }
-
-  /* ---- FOOTER ---- */
-  footer {
-    flex-direction: column;
-    text-align: center;
-    gap: 12px;
-  }
-}
-
-/* ── SMALL PHONES (≤ 480px) ────────────────────────────────── */
 @media (max-width: 480px) {
-  :root {
-    --section-pad-x: 16px;
-    --section-pad-y: 56px;
-  }
-
-  .hero-cta {
+  .hero-cta-group {
     flex-direction: column;
     width: 100%;
   }
-  .hero-cta .btn {
+  .hero-cta-group .btn-navena-primary,
+  .hero-cta-group .btn-navena-outline {
     width: 100%;
+    justify-content: center;
   }
-
-  .hero-photo-wrap {
-    width: 260px;
-    height: 260px;
-  }
-  .photo-frame { width: 190px; height: 190px; }
-  .orbit-1 { width: 230px; height: 230px; }
-  .orbit-2 { display: none; }
-
-  .project-visual {
-    height: 220px;
-    padding: 14px;
-  }
-  .kanban-board {
+  .stats-strip-grid {
     grid-template-columns: 1fr;
-  }
-  .kanban-col:nth-child(n+2) {
-    display: none;
-  }
-
-  .timeline-item {
-    padding-left: 36px;
-  }
-  .timeline::before {
-    left: 10px;
-  }
-  .timeline-dot {
-    left: 4px;
-    width: 13px;
-    height: 13px;
-  }
-
-  .modal-actions {
-    flex-direction: column;
-  }
-  .modal-actions .btn {
-    width: 100%;
   }
 }
 
-/* ── TOUCH DEVICE CURSOR RESET ─────────────────────────────── */
-@media (hover: none) and (pointer: coarse) {
-  .cursor,
-  .cursor-ring {
-    display: none !important;
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
-  body, * {
-    cursor: auto !important;
-  }
-  .btn, .contact-link, .profile-card, .back-link, .nav-toggle {
-    cursor: pointer !important;
+  .animate-ping,
+  .animate-bounce,
+  .iridescent-gradient-text,
+  .metallic-chrome-text,
+  .svg-glow-rect,
+  .avatar-conic-ring {
+    animation: none !important;
   }
 }

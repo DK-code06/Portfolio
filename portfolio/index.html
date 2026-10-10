@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Deepakkumar B — Full Stack Developer</title>
-  <meta name="description" content="Portfolio of Deepakkumar B, a Full Stack Developer building modern, secure, scalable, and intelligent web applications using React, TypeScript, Node.js, and PostgreSQL."/>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Deepakkumar B | Full-Stack Developer &amp; Software Engineer</title>
+  <meta name="description" content="Portfolio of Deepakkumar B — Full-Stack Developer specializing in Scalable Web Architectures, Real-Time Systems, Database Design, and Intelligent Web Solutions."/>
   <meta name="keywords" content="Deepakkumar B, Full Stack Developer, Software Engineer, React, Node.js, TypeScript, PostgreSQL, MongoDB, Portfolio"/>
   <meta name="author" content="Deepakkumar B"/>
 
-  <!-- Open Graph / Social Media -->
-  <meta property="og:title" content="Deepakkumar B — Full Stack Developer"/>
-  <meta property="og:description" content="Full Stack Developer building modern, secure, and scalable web applications with React, Node.js, TypeScript, and modern database architectures."/>
+  <!-- Theme initialization to avoid FOUC flash -->
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('theme');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Deepakkumar B | Full-Stack Developer &amp; Software Engineer"/>
+  <meta property="og:description" content="Full-Stack Developer building modern, secure, and scalable web applications."/>
   <meta property="og:type" content="website"/>
   <meta property="og:url" content="https://github.com/DK-code06"/>
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Deepakkumar B — Full Stack Developer"/>
-  <meta name="twitter:description" content="Full Stack Developer building modern, secure, and scalable web applications."/>
-
-  <!-- Fonts -->
+  <!-- Google Fonts: Outfit (Display & Headings) + Inter (Body) -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/reset.css"/>
@@ -34,755 +44,967 @@
   <link rel="stylesheet" href="css/cards.css"/>
   <link rel="stylesheet" href="css/contact.css"/>
   <link rel="stylesheet" href="css/animations.css"/>
-  <link rel="stylesheet" href="css/photo.css"/>
   <link rel="stylesheet" href="css/responsive.css"/>
 </head>
-<body>
+<body class="font-sans antialiased relative min-h-screen">
 
-  <!-- Custom Cursor -->
-  <div class="cursor" id="cursor" aria-hidden="true"></div>
-  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+  <!-- Fine Noise Overlay -->
+  <div aria-hidden="true" class="noise-overlay"></div>
 
-  <!-- Navigation -->
-  <nav id="navbar" aria-label="Main Navigation">
-    <div class="nav-container">
-      <a href="#hero" class="nav-logo" aria-label="DK.dev Home">DK<span>.dev</span></a>
-      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span><span></span>
-      </button>
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#about">About</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="pages/achievements.html">Achievements</a></li>
-        <li><a href="pages/certifications.html">Certs</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#contact" class="nav-cta" title="Request or view Deepakkumar B's Resume">Resume</a></li>
-      </ul>
-    </div>
-  </nav>
+  <!-- Interactive Connected Circuit Canvas -->
+  <canvas id="techCanvas" aria-hidden="true"></canvas>
 
-  <!-- HERO -->
-  <section id="hero" aria-label="Introduction">
-    <div class="hero-orb orb1" aria-hidden="true"></div>
-    <div class="hero-orb orb2" aria-hidden="true"></div>
-    <div class="hero-orb orb3" aria-hidden="true"></div>
-    <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <!-- Top Scroll Progress Indicator -->
+  <div id="scrollProgress" aria-hidden="true"></div>
 
-    <!-- LEFT: Text Content -->
-    <div class="hero-content">
-      <div class="hero-tag">
-        <span class="blink-dot" aria-hidden="true"></span> Available for Software Engineering Opportunities
+  <!-- Ambient Cursor Spotlight Overlay -->
+  <div id="spotlightOverlay" aria-hidden="true"></div>
+
+  <!-- FIXED GLASS HEADER -->
+  <header id="siteHeader">
+    <div class="nav-inner">
+      <div class="nav-left">
+        <a class="nav-logo-text" href="#hero">Deepakkumar B</a>
+
+        <nav class="nav-capsule-links" aria-label="Main Navigation">
+          <a class="nav-capsule-item" href="#education">Education</a>
+          <a class="nav-capsule-item" href="#projects">Projects</a>
+          <a class="nav-capsule-item" href="#skills">Skills</a>
+          <a class="nav-capsule-item" href="#certifications">Certifications</a>
+          <a class="nav-capsule-item" href="#contact">Contact</a>
+        </nav>
       </div>
 
-      <h1 class="hero-name">
-        <span class="line1">Deepak</span>
-        <span class="line2">kumar B</span>
-      </h1>
-
-      <div class="hero-roles">
-        <span class="role-badge primary">Full Stack Developer</span>
-        <span class="role-badge secondary">Software Engineer</span>
-      </div>
-
-      <p class="hero-bio">
-        Full Stack Developer building modern, secure, scalable, and intelligent web applications. Focused on engineering high-performance systems with React, Node.js, TypeScript, modern databases, real-time communication, and AI integrations.
-      </p>
-
-      <div class="hero-cta">
-        <a href="#projects" class="btn btn-primary">View Projects</a>
-        <a href="#contact" class="btn btn-outline" title="Contact to receive formal resume PDF">Download Resume</a>
-        <a href="https://github.com/DK-code06" target="_blank" rel="noopener noreferrer" class="btn btn-outline">
-          <svg width="15" height="15" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-          GitHub
+      <div class="nav-actions">
+        <!-- Email Icon Link -->
+        <a class="nav-icon-btn" href="mailto:bdeepakkumar2006@gmail.com" aria-label="Send an email to Deepakkumar" title="Email Me">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
         </a>
-        <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-      </div>
 
-      <!-- Verified Hero Stats -->
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-num" data-count="4" data-pad="true">04</span>
-          <span class="stat-label">Flagship Projects</span>
-        </div>
-        <div class="stat">
-          <span class="stat-text">Full Stack</span>
-          <span class="stat-label">Engineering</span>
-        </div>
-        <div class="stat">
-          <span class="stat-text">React + Node</span>
-          <span class="stat-label">Core Stack</span>
-        </div>
-        <div class="stat">
-          <span class="stat-text">2023–2027</span>
-          <span class="stat-label">B.E. CSE</span>
-        </div>
-      </div>
-    </div>
+        <!-- LinkedIn Icon Link -->
+        <a class="nav-icon-btn" href="https://www.linkedin.com/in/deepakkumar-b-1a46a62b6" target="_blank" rel="noopener noreferrer" aria-label="Deepakkumar LinkedIn Profile" title="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+        </a>
 
-    <!-- RIGHT: Photo & Tech Rings -->
-    <div class="hero-photo-wrap" aria-label="Deepakkumar B profile photo with tech orbits">
-      <div class="orbit orbit-1" aria-hidden="true"></div>
-      <div class="orbit orbit-2" aria-hidden="true"></div>
-      <div class="orbit orbit-3" aria-hidden="true"></div>
+        <!-- GitHub Icon Link -->
+        <a class="nav-icon-btn" href="https://github.com/DK-code06" target="_blank" rel="noopener noreferrer" aria-label="Deepakkumar GitHub Profile" title="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+        </a>
 
-      <div class="orbit-dot dot-react" title="React.js" aria-hidden="true">⚛</div>
-      <div class="orbit-dot dot-node" title="Node.js" aria-hidden="true">⬡</div>
-      <div class="orbit-dot dot-ts" title="TypeScript" aria-hidden="true">TS</div>
-      <div class="orbit-dot dot-db" title="PostgreSQL & MongoDB" aria-hidden="true">🗄</div>
+        <!-- Dark/Light Theme Toggle Button -->
+        <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="Toggle theme">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+        </button>
 
-      <div class="photo-glow" aria-hidden="true"></div>
-
-      <div class="photo-frame">
-        <div class="photo-border-spin" aria-hidden="true"></div>
-        <div class="photo-inner">
-          <img src="images/deepak.jpg" alt="Deepakkumar B — Full Stack Developer" width="320" height="320" loading="eager" />
-        </div>
-        <div class="photo-scan" aria-hidden="true"></div>
-        <span class="corner tl" aria-hidden="true"></span>
-        <span class="corner tr" aria-hidden="true"></span>
-        <span class="corner bl" aria-hidden="true"></span>
-        <span class="corner br" aria-hidden="true"></span>
-      </div>
-
-      <div class="info-chip chip-location">
-        <span>📍</span> Tamil Nadu, India
-      </div>
-      <div class="info-chip chip-status">
-        <span class="pulse-dot" aria-hidden="true"></span> Full Stack Developer
+        <!-- Mobile Navigation Toggle -->
+        <button id="mobileNavToggle" class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- ABOUT SECTION -->
-  <section id="about" aria-labelledby="about-heading">
-    <div class="section-label">Background</div>
-    <h2 id="about-heading" class="section-title reveal">Engineering Practical Systems</h2>
+  <!-- Mobile Menu Drawer Overlay -->
+  <div id="mobileMenuDrawer" aria-label="Mobile Navigation">
+    <a href="#education">Education &amp; Journey</a>
+    <a href="#projects">Flagship Projects</a>
+    <a href="#skills">Technical Skills</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#contact">Contact Me</a>
+  </div>
 
-    <div class="about-grid">
-      <div class="about-text reveal">
-        <p>
-          I am a Computer Science and Engineering student at <strong>National Engineering College</strong> and a <strong>Full Stack Developer</strong> focused on building practical, production-oriented web applications. Rather than surface-level CRUD projects, I approach software by addressing real architectural concerns—such as schema design, granular role-based authorization, bidirectional real-time synchronization, and external API orchestration.
-        </p>
-        <p>
-          My core technical domain encompasses <strong>React, TypeScript, Node.js, Express, MongoDB, and PostgreSQL</strong>. Whether designing a collaborative task platform with automated GitHub webhooks and AI decomposition or architecting an enterprise workforce platform with Python OCR services, I take ownership across frontend interfaces, REST API architecture, and database operations.
-        </p>
-        <p>
-          I value clean code organization, automated testing with Jest, proactive security controls, and responsive user experiences that stay fast and intuitive across all device form factors.
-        </p>
-      </div>
+  <main>
+    <!-- HERO SECTION -->
+    <section id="hero" class="bg-tech-grid">
+      <div class="hero-ambient-glow" aria-hidden="true"></div>
 
-      <div class="about-highlights reveal">
-        <div class="highlight-card">
-          <div class="highlight-icon">🏗️</div>
-          <div>
-            <div class="highlight-title">System Design &amp; Architecture</div>
-            <div class="highlight-desc">Developing structured RESTful APIs, relational PostgreSQL schemas with Knex, and scalable MongoDB document models.</div>
-          </div>
-        </div>
-        <div class="highlight-card">
-          <div class="highlight-icon">⚡</div>
-          <div>
-            <div class="highlight-title">Real-Time &amp; Event-Driven Systems</div>
-            <div class="highlight-desc">Building bidirectional Socket.IO channels for coding battle arenas, live collaborative boards, and automated repository webhooks.</div>
-          </div>
-        </div>
-        <div class="highlight-card">
-          <div class="highlight-icon">🛡️</div>
-          <div>
-            <div class="highlight-title">Security &amp; Best Practices</div>
-            <div class="highlight-desc">Enforcing JWT session handling, role-based access control (RBAC), Helmet security headers, CORS policies, and automated test suites.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- TECHNICAL SKILLS -->
-  <section id="skills" aria-labelledby="skills-heading">
-    <div class="section-label">Expertise</div>
-    <h2 id="skills-heading" class="section-title reveal">Technical Skills</h2>
-    <p class="section-desc reveal">Categorized technology stack utilized across full-stack engineering, databases, security, and developer workflows.</p>
-
-    <div class="skills-grid">
-      <!-- 1. Languages -->
-      <div class="skill-card reveal">
-        <div class="skill-card-icon">⚡</div>
-        <div class="skill-card-title">Languages</div>
-        <div class="skill-tags">
-          <span class="skill-tag">JavaScript</span>
-          <span class="skill-tag">TypeScript</span>
-          <span class="skill-tag">Java</span>
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">C</span>
-          <span class="skill-tag">C++</span>
-          <span class="skill-tag">SQL</span>
-        </div>
-      </div>
-
-      <!-- 2. Frontend -->
-      <div class="skill-card reveal">
-        <div class="skill-card-icon">🎨</div>
-        <div class="skill-card-title">Frontend</div>
-        <div class="skill-tags">
-          <span class="skill-tag">React.js</span>
-          <span class="skill-tag">Next.js</span>
-          <span class="skill-tag">Vite</span>
-          <span class="skill-tag">HTML5</span>
-          <span class="skill-tag">CSS3</span>
-          <span class="skill-tag">Tailwind CSS</span>
-          <span class="skill-tag">React Router</span>
-        </div>
-      </div>
-
-      <!-- 3. Backend -->
-      <div class="skill-card reveal">
-        <div class="skill-card-icon">⚙️</div>
-        <div class="skill-card-title">Backend</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Node.js</span>
-          <span class="skill-tag">Express.js</span>
-          <span class="skill-tag">REST APIs</span>
-          <span class="skill-tag">JWT</span>
-          <span class="skill-tag">Socket.IO</span>
-        </div>
-      </div>
-
-      <!-- 4. Databases -->
-      <div class="skill-card reveal">
-        <div class="skill-card-icon">🗄️</div>
-        <div class="skill-card-title">Databases</div>
-        <div class="skill-tags">
-          <span class="skill-tag">MongoDB</span>
-          <span class="skill-tag">Mongoose</span>
-          <span class="skill-tag">PostgreSQL</span>
-          <span class="skill-tag">MySQL</span>
-          <span class="skill-tag">Knex</span>
-        </div>
-      </div>
-
-      <!-- 5. AI & Integrations -->
-      <div class="skill-card reveal">
-        <div class="skill-card-icon">🤖</div>
-        <div class="skill-card-title">AI &amp; Integrations</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Google Gemini</span>
-          <span class="skill-tag">GitHub OAuth</span>
-          <span class="skill-tag">GitHub Webhooks</span>
-          <span class="skill-tag">Web Push</span>
-          <span class="skill-tag">Cloudinary</span>
-        </div>
-      </div>
-
-      <!-- 6. Testing & Security -->
-      <div class="skill-card reveal">
-        <div class="skill-card-icon">🛡️</div>
-        <div class="skill-card-title">Testing &amp; Security</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Jest</span>
-          <span class="skill-tag">Supertest</span>
-          <span class="skill-tag">RBAC</span>
-          <span class="skill-tag">JWT</span>
-          <span class="skill-tag">Helmet</span>
-          <span class="skill-tag">CSP</span>
-          <span class="skill-tag">HSTS</span>
-          <span class="skill-tag">CORS</span>
-        </div>
-      </div>
-
-      <!-- 7. Tools & DevOps -->
-      <div class="skill-card reveal">
-        <div class="skill-card-icon">🛠️</div>
-        <div class="skill-card-title">Tools &amp; DevOps</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Git</span>
-          <span class="skill-tag">GitHub</span>
-          <span class="skill-tag">Docker</span>
-          <span class="skill-tag">Vercel</span>
-          <span class="skill-tag">Jenkins</span>
-          <span class="skill-tag">Figma</span>
-          <span class="skill-tag">Postman</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FLAGSHIP PROJECTS -->
-  <section id="projects" aria-labelledby="projects-heading">
-    <div class="section-label">Work</div>
-    <h2 id="projects-heading" class="section-title reveal">Flagship Projects</h2>
-    <p class="section-desc reveal">Production-oriented systems emphasizing real-time synchronization, architectural security, external integrations, and data modeling.</p>
-
-    <div class="projects-container">
-
-      <!-- PROJECT 01: Task Management & Productivity Platform (Featured) -->
-      <div class="project-card featured reveal" id="project-taskmgmt">
-        <div class="project-details">
-          <span class="featured-badge">★ Featured Engineering Project</span>
-          <div class="project-meta">
-            <span class="project-num">01</span>
-            <span class="project-cat">Productivity &amp; AI Platform</span>
-          </div>
-          <h3 class="project-title">Task Management &amp; Productivity Platform</h3>
-          <p class="project-desc">
-            A full-stack collaborative task and project management platform with real-time synchronization, workload intelligence, automated GitHub integration, and AI-assisted task decomposition.
-          </p>
-
-          <div class="project-techs">
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">MongoDB</span>
-            <span class="tech-tag">Socket.IO</span>
-            <span class="tech-tag">Google Gemini</span>
-            <span class="tech-tag">GitHub API</span>
-          </div>
-
-          <ul class="project-features">
-            <li>AI-assisted task decomposition &amp; complexity estimation via Google Gemini</li>
-            <li>GitHub OAuth, repository integration, and automated issue webhooks</li>
-            <li>Real-time team collaboration, presence tracking, and updates via Socket.IO</li>
-            <li>Workload intelligence dashboards mapping cycle times and pending task debt</li>
-            <li>Granular RBAC, Web Push reminders, and automated Jest/Supertest test suites</li>
-          </ul>
-
-          <div class="project-actions">
-            <a href="https://taskmanagement-delta-virid.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live Demo</a>
-            <a href="https://github.com/DK-code06/taskmanagement" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
-            <button class="btn-case-study" data-modal-target="task-management">View Case Study →</button>
-          </div>
-        </div>
-
-        <!-- Abstract CSS Mockup: Kanban Board -->
-        <div class="project-visual" aria-hidden="true">
-          <div class="mockup-header">
-            <div class="mockup-dots">
-              <span class="mockup-dot dot-red"></span>
-              <span class="mockup-dot dot-yellow"></span>
-              <span class="mockup-dot dot-green"></span>
+      <div class="max-w-6xl">
+        <div class="hero-grid">
+          <!-- LEFT COLUMN -->
+          <div class="hero-left-content">
+            <!-- Availability Pill with Ping Dot -->
+            <div class="hero-status-pill">
+              <span class="status-ping-dot animate-ping" aria-hidden="true"></span>
+              Available for Full-Stack &amp; Software Engineering
             </div>
-            <span class="mockup-title">task-workspace / kanban-board</span>
-          </div>
-          <div class="kanban-board">
-            <div class="kanban-col">
-              <div class="col-header"><span>Backlog</span><span>4</span></div>
-              <div class="kanban-card">
-                <div>Decompose microservice</div>
-                <span class="kanban-pill pill-ai">⚡ Gemini AI</span>
-              </div>
-              <div class="kanban-card">
-                <div>Setup Redis cache</div>
-              </div>
-            </div>
-            <div class="kanban-col">
-              <div class="col-header"><span>In Progress</span><span>2</span></div>
-              <div class="kanban-card active">
-                <div>GitHub Webhook Sync</div>
-                <span class="kanban-pill pill-git">⑂ PR #42</span>
-              </div>
-            </div>
-            <div class="kanban-col">
-              <div class="col-header"><span>Completed</span><span>8</span></div>
-              <div class="kanban-card">
-                <div>Socket.IO channels</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- PROJECT 02: QuestLearn — Gamified Learning & Coding Platform -->
-      <div class="project-card reveal" id="project-questlearn">
-        <div class="project-details">
-          <div class="project-meta">
-            <span class="project-num">02</span>
-            <span class="project-cat">EdTech &amp; Gamification</span>
-          </div>
-          <h3 class="project-title">QuestLearn — Gamified Learning Platform</h3>
-          <p class="project-desc">
-            A gamified Learning Management System combining structured courses, interactive algorithmic challenges, competitive real-time coding battle rooms, and RPG-style progression.
-          </p>
+            <!-- Headline with Typewriter -->
+            <h1 class="hero-main-title">
+              <span>Building</span>
+              <span>Scalable</span>
+              <span>Full-Stack</span>
+              <span>Systems</span>
+              <span>&amp;</span>
+              <span class="hero-typewriter-wrap">
+                <span class="iridescent-gradient-text" id="typewriterText">Full-Stack Web Architectures</span>
+                <span class="typewriter-cursor" id="typewriterCursor" aria-hidden="true"></span>
+              </span>
+            </h1>
 
-          <div class="project-techs">
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">Express.js</span>
-            <span class="tech-tag">Socket.IO</span>
-            <span class="tech-tag">MongoDB</span>
-          </div>
-
-          <ul class="project-features">
-            <li>Real-time 1v1 coding battle arena with live duel rooms &amp; test runner</li>
-            <li>RPG progression engine with XP levels, streaks, medals, and leaderboards</li>
-            <li>Role-based dashboards for students, instructors, and system administrators</li>
-            <li>Interactive courses with coding challenges, quizzes, and automated evaluation</li>
-            <li>Real-time community chat with typing indicators and online presence</li>
-          </ul>
-
-          <div class="project-actions">
-            <a href="https://questlearn-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live Demo</a>
-            <a href="https://github.com/DK-code06/questlearn" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
-            <button class="btn-case-study" data-modal-target="questlearn">View Case Study →</button>
-          </div>
-        </div>
-
-        <!-- Abstract CSS Mockup: Code Battle Terminal -->
-        <div class="project-visual" aria-hidden="true">
-          <div class="mockup-header">
-            <div class="mockup-dots">
-              <span class="mockup-dot dot-red"></span>
-              <span class="mockup-dot dot-yellow"></span>
-              <span class="mockup-dot dot-green"></span>
-            </div>
-            <span class="mockup-title">battle-arena / duel-room-402</span>
-          </div>
-          <div class="battle-terminal">
-            <div class="battle-header">
-              <span>Duel: Two Sum Optimization</span>
-              <span style="color: #4ade80;">04:32 remaining</span>
-            </div>
-            <div class="battle-code">
-              <div><span class="kw">function</span> <span class="fn">solve</span>(nums, target) {</div>
-              <div>&nbsp;&nbsp;<span class="kw">const</span> map = <span class="kw">new</span> Map();</div>
-              <div>&nbsp;&nbsp;<span class="kw">for</span> (<span class="kw">let</span> i = 0; i &lt; nums.length; i++) { ... }</div>
-              <div>}</div>
-            </div>
-            <div class="battle-status">
-              <span>● Test Cases Passed: 14/14</span>
-              <span style="margin-left: auto; color: #a5b4fc;">+120 XP</span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROJECT 03: SCMS — Enterprise Management System -->
-      <div class="project-card reveal" id="project-scms">
-        <div class="project-details">
-          <div class="project-meta">
-            <span class="project-num">03</span>
-            <span class="project-cat">Enterprise SaaS &amp; Systems</span>
-          </div>
-          <h3 class="project-title">SCMS — Enterprise Management System</h3>
-          <p class="project-desc">
-            An enterprise operations platform architected for organizational hierarchy management, automated attendance, payroll computation, leave lifecycles, and OCR-powered document processing.
-          </p>
-
-          <div class="project-techs">
-            <span class="tech-tag">PostgreSQL</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">Knex</span>
-            <span class="tech-tag">FastAPI</span>
-            <span class="tech-tag">Docker</span>
-          </div>
-
-          <ul class="project-features">
-            <li>Enterprise hierarchy management with granular role-based access control (RBAC)</li>
-            <li>Automated attendance tracking, shift scheduling, and leave approval workflows</li>
-            <li>Structured payroll computation engine with statutory deduction handling</li>
-            <li>Python OCR microservice (FastAPI + OpenCV + Tesseract) for document extraction</li>
-            <li>Relational PostgreSQL data model structured with Knex query builders</li>
-          </ul>
-
-          <div class="project-actions">
-            <a href="https://scms-red.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live Demo</a>
-            <a href="https://github.com/supportsynnoviqtech/scms" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
-            <button class="btn-case-study" data-modal-target="scms">View Case Study →</button>
-          </div>
-        </div>
-
-        <!-- Abstract CSS Mockup: Enterprise Metrics & RBAC -->
-        <div class="project-visual" aria-hidden="true">
-          <div class="mockup-header">
-            <div class="mockup-dots">
-              <span class="mockup-dot dot-red"></span>
-              <span class="mockup-dot dot-yellow"></span>
-              <span class="mockup-dot dot-green"></span>
-            </div>
-            <span class="mockup-title">scms-enterprise / operations-dashboard</span>
-          </div>
-          <div class="enterprise-grid">
-            <div class="ent-stat-card">
-              <div class="ent-stat-label">Active Workforce</div>
-              <div class="ent-stat-val">128 Staff</div>
-            </div>
-            <div class="ent-stat-card">
-              <div class="ent-stat-label">Payroll Cycle</div>
-              <div class="ent-stat-val" style="color: #38bdf8;">Verified</div>
-            </div>
-            <div class="ent-table">
-              <div class="ent-row">
-                <span>Dept / Role</span>
-                <span>OCR Record</span>
-                <span>Status</span>
-              </div>
-              <div class="ent-row" style="color: #f1f5f9;">
-                <span>Engineering Lead</span>
-                <span class="badge-verified">ID_Verified.pdf</span>
-                <span class="badge-verified">Active</span>
-              </div>
-              <div class="ent-row" style="color: #cbd5e1;">
-                <span>Operations Mgr</span>
-                <span class="badge-verified">Passport_OCR.pdf</span>
-                <span class="badge-verified">Active</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- PROJECT 04: Reminisce — Full-Stack Social Blogging Platform -->
-      <div class="project-card reveal" id="project-reminisce">
-        <div class="project-details">
-          <div class="project-meta">
-            <span class="project-num">04</span>
-            <span class="project-cat">Social Media &amp; Content</span>
-          </div>
-          <h3 class="project-title">Reminisce — Full-Stack Social Platform</h3>
-          <p class="project-desc">
-            A full-stack social publishing platform featuring multimedia blogging, nested community discussions, social graphs, and personalized content discovery.
-          </p>
-
-          <div class="project-techs">
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">Express.js</span>
-            <span class="tech-tag">MongoDB</span>
-            <span class="tech-tag">Cloudinary</span>
-          </div>
-
-          <ul class="project-features">
-            <li>Secure JWT authentication with session persistence and custom profile avatars</li>
-            <li>Rich blog authoring with image uploading handled via Multer and Cloudinary CDN</li>
-            <li>Multi-threaded nested comments, reply trees, and optimistic like interactions</li>
-            <li>Social graph mechanics with bi-directional follow/unfollow and custom feeds</li>
-            <li>Search and discovery system indexing articles by author, tags, and keywords</li>
-          </ul>
-
-          <div class="project-actions">
-            <a href="https://reminisce-alpha.vercel.app/auth" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">Live Demo</a>
-            <a href="https://github.com/DK-code06/blogapp" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">GitHub</a>
-            <button class="btn-case-study" data-modal-target="reminisce">View Case Study →</button>
-          </div>
-        </div>
-
-        <!-- Abstract CSS Mockup: Social Feed & Article -->
-        <div class="project-visual" aria-hidden="true">
-          <div class="mockup-header">
-            <div class="mockup-dots">
-              <span class="mockup-dot dot-red"></span>
-              <span class="mockup-dot dot-yellow"></span>
-              <span class="mockup-dot dot-green"></span>
-            </div>
-            <span class="mockup-title">reminisce-app / feed-view</span>
-          </div>
-          <div class="feed-mockup">
-            <div class="feed-post">
-              <div class="feed-author">
-                <span class="feed-avatar"></span>
-                <span class="feed-name">Alex Chen · 2h ago</span>
-              </div>
-              <div class="feed-snippet">
-                "Architecting scalable state in TypeScript applications with zero hydration mismatch..."
-              </div>
-              <div class="feed-bar">
-                <span>♥ 48 Likes</span>
-                <span>💬 12 Comments</span>
-                <span>☍ Share</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- EXPERIENCE & EDUCATION -->
-  <section id="experience" aria-labelledby="experience-heading">
-    <div class="section-label">Trajectory</div>
-    <h2 id="experience-heading" class="section-title reveal">Experience &amp; Education</h2>
-
-    <div class="experience-edu-grid">
-
-      <!-- EXPERIENCE COLUMN -->
-      <div class="timeline-column reveal">
-        <div class="timeline-column-title">
-          Work Experience
-          <span>Internship</span>
-        </div>
-
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot" aria-hidden="true"></div>
-            <span class="timeline-date">Internship</span>
-            <div class="timeline-title">SYNNOVIQ TECHNOLOGIES PVT. LTD.</div>
-            <div class="timeline-sub">Software Developer Intern <span class="location">· Kovilpatti, Tamil Nadu</span></div>
-            <div class="timeline-body">
-              <ul class="timeline-bullets">
-                <li>Worked on real-world software development workflows involving application development, debugging, database-driven systems, and collaborative coding.</li>
-                <li>Applied full-stack development practices across frontend, backend APIs, database integration, Git-based workflows, testing, and deployment.</li>
-                <li>Contributed to structured development, debugging, documentation, and project delivery processes.</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- EDUCATION COLUMN -->
-      <div class="timeline-column reveal">
-        <div class="timeline-column-title">
-          Academic Background
-          <span>Verified</span>
-        </div>
-
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-dot" aria-hidden="true"></div>
-            <span class="timeline-date">2023 – 2027</span>
-            <div class="timeline-title">National Engineering College</div>
-            <div class="timeline-sub">B.E. — Computer Science and Engineering <span class="timeline-badge">CGPA: 6.94 / 10</span></div>
-            <p class="timeline-body">
-              Undergraduate engineering curriculum focused on data structures, algorithms, relational database systems, operating systems, and full-stack software development.
+            <p class="hero-summary-text">
+              I’m <span class="font-bold iridescent-gradient-text">Deepakkumar B</span> — B.E. Computer Science and Engineering Scholar at National Engineering College. I specialize in designing scalable full-stack web architectures, clean UI, database systems, real-time communication, and AI-driven platforms.
             </p>
+
+            <!-- Tech Verification Pills -->
+            <div class="hero-capability-chips">
+              <span class="capability-chip">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                Full-Stack Engineering
+              </span>
+              <span class="capability-chip">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                Real-Time Systems (Socket.IO)
+              </span>
+              <span class="capability-chip">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                PostgreSQL &amp; MongoDB
+              </span>
+              <span class="capability-chip">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                AI Integrations (Gemini API)
+              </span>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="hero-cta-group">
+              <a href="#projects" class="btn-navena-primary">
+                <span>View Projects</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+              </a>
+              <a href="#contact" class="btn-navena-outline">Contact Me</a>
+              <a href="#contact" class="btn-navena-outline" title="Contact to request resume PDF">Download Resume</a>
+            </div>
           </div>
 
-          <div class="timeline-item">
-            <div class="timeline-dot" aria-hidden="true"></div>
-            <span class="timeline-date">2022 – 2023</span>
-            <div class="timeline-title">Nadar Higher Secondary School</div>
-            <div class="timeline-sub">HSE — Mathematics &amp; Computer Science <span class="timeline-badge">82.5%</span></div>
-            <p class="timeline-body">
-              Completed Higher Secondary Education in Kovilpatti, establishing foundational competencies in computer science, logic, and mathematics.
-            </p>
+          <!-- RIGHT COLUMN: 3D METALLIC AVATAR -->
+          <div class="hero-right-avatar">
+            <div class="avatar-perspective-wrap">
+              <div class="avatar-ambient-glow-back" aria-hidden="true"></div>
+
+              <div class="avatar-card-3d">
+                <div class="avatar-conic-ring" aria-hidden="true"></div>
+
+                <div class="avatar-circle-frame">
+                  <div class="avatar-inner-box">
+                    <img src="images/deepak.jpg" alt="Deepakkumar B — Full Stack Developer" width="320" height="320" loading="eager"/>
+                  </div>
+                </div>
+
+                <!-- Floating Tech Orbit Badges -->
+                <div class="avatar-orbit-badges" aria-hidden="true">
+                  <div class="orbit-badge-icon badge-top-left" title="Frontend &amp; Full-Stack">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code-xml"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
+                  </div>
+                  <div class="orbit-badge-icon badge-top-right" title="Database &amp; Systems">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+                  </div>
+                  <div class="orbit-badge-icon badge-bottom" title="AI &amp; Integrations">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Scroll Explore Prompt -->
+        <div class="hero-scroll-prompt">
+          <a href="#education" class="hero-scroll-link" aria-label="Scroll to education section">
+            <span>Explore Portfolio</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down animate-bounce"><path d="m6 9 6 6 6-6"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS STRIP -->
+    <section id="stats-strip" class="max-w-6xl py-4">
+      <div class="stats-strip-grid">
+        <div class="stat-metric-card">
+          <div class="stat-card-header">
+            <span class="stat-main-number font-numeric" data-count="4" data-pad="true" data-suffix="+">04+</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-folder-git2"><path d="M9 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.9a2 2 0 0 1 1.69.9l.81 1.2a2 2 0 0 0 1.67.9H20a2 2 0 0 1 2 2v5"/><circle cx="13" cy="12" r="2"/><path d="M18 19c-2.8 0-5-2.2-5-5v8"/><circle cx="20" cy="19" r="2"/></svg>
+          </div>
+          <p class="stat-metric-title">Delivered Web Projects</p>
+          <p class="stat-metric-subtext">4 Core Flagship Systems + Production Implementations</p>
+        </div>
+
+        <div class="stat-metric-card">
+          <div class="stat-card-header">
+            <span class="stat-main-number">Full-Stack</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-layers"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="m2 12 8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9"/><path d="m2 17 8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9"/></svg>
+          </div>
+          <p class="stat-metric-title">Full-Stack Architecture</p>
+          <p class="stat-metric-subtext">React, Node, Express, PostgreSQL &amp; MongoDB</p>
+        </div>
+
+        <div class="stat-metric-card">
+          <div class="stat-card-header">
+            <span class="stat-main-number">6.94 CGPA</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>
+          </div>
+          <p class="stat-metric-title">National Engineering College</p>
+          <p class="stat-metric-subtext">B.E. Computer Science and Engineering (2023–2027)</p>
+        </div>
+
+        <div class="stat-metric-card">
+          <div class="stat-card-header">
+            <span class="stat-main-number">Internship</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-code"><path d="m16 18 6-6-6-6"/><path d="m8 6-6 6 6 6"/></svg>
+          </div>
+          <p class="stat-metric-title">Synnoviq Technologies</p>
+          <p class="stat-metric-subtext">Software Developer Intern · Kovilpatti</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 01: EDUCATION & EXPERIENCE -->
+    <section id="education" class="max-w-6xl py-12">
+      <div style="margin-bottom: 2rem;">
+        <span class="section-meta-index">01 //</span>
+        <h2 class="section-heading-title">Education &amp; Academic Journey</h2>
+        <p class="section-heading-desc">Academic background in computer science engineering and hands-on professional software development.</p>
+      </div>
+
+      <div class="timeline-track-wrap">
+        <div class="timeline-vertical-line" aria-hidden="true"></div>
+
+        <ol class="timeline-items-list">
+          <!-- Internship -->
+          <li class="timeline-entry-row">
+            <div class="timeline-node-icon-dot" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-briefcase"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+            </div>
+            <div class="high-tech-card">
+              <div class="card-spotlight-layer" aria-hidden="true"></div>
+              <div class="timeline-card-content">
+                <div class="timeline-inst-row">
+                  <h3 class="timeline-inst-title">SYNNOVIQ TECHNOLOGIES PVT. LTD.</h3>
+                  <span class="timeline-date-tag">2024</span>
+                </div>
+                <p class="timeline-role-degree">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-badge-check"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg>
+                  Software Developer Intern · Kovilpatti, Tamil Nadu
+                </p>
+                <p class="timeline-score-body">
+                  Worked on real-world software development workflows, collaborative coding practices, backend REST APIs, database integration, testing, and debugging.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <!-- College -->
+          <li class="timeline-entry-row">
+            <div class="timeline-node-icon-dot" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+            </div>
+            <div class="high-tech-card">
+              <div class="card-spotlight-layer" aria-hidden="true"></div>
+              <div class="timeline-card-content">
+                <div class="timeline-inst-row">
+                  <h3 class="timeline-inst-title">NATIONAL ENGINEERING COLLEGE</h3>
+                  <span class="timeline-date-tag">2023–2027</span>
+                </div>
+                <p class="timeline-role-degree">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>
+                  Bachelor of Engineering — Computer Science &amp; Engineering
+                </p>
+                <p class="timeline-score-body">
+                  Cumulative CGPA: <strong>6.94 / 10</strong> | Focus on Data Structures, Database Management Systems, System Design, Operating Systems, and Modern Full-Stack Web Development.
+                </p>
+              </div>
+            </div>
+          </li>
+
+          <!-- School -->
+          <li class="timeline-entry-row">
+            <div class="timeline-node-icon-dot" aria-hidden="true">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+            </div>
+            <div class="high-tech-card">
+              <div class="card-spotlight-layer" aria-hidden="true"></div>
+              <div class="timeline-card-content">
+                <div class="timeline-inst-row">
+                  <h3 class="timeline-inst-title">NADAR HIGHER SECONDARY SCHOOL</h3>
+                  <span class="timeline-date-tag">2022–2023</span>
+                </div>
+                <p class="timeline-role-degree">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg>
+                  Higher Secondary Education — Mathematics &amp; Computer Science
+                </p>
+                <p class="timeline-score-body">
+                  Percentage: <strong>82.5%</strong> | Strong foundational background in algorithmic logic, science, and mathematics.
+                </p>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- SECTION 02: FEATURED PROJECTS -->
+    <section id="projects" class="max-w-6xl py-12">
+      <div style="margin-bottom: 1.5rem;">
+        <span class="section-meta-index">02 //</span>
+        <h2 class="section-heading-title">Featured &amp; Engineering Projects</h2>
+        <p class="section-heading-desc">Production-grade full-stack systems built with real-time collaboration, database schemas, and AI integrations. Touch any card to view detailed architecture.</p>
+      </div>
+
+      <!-- Filter Buttons -->
+      <div class="project-filters-row">
+        <button type="button" class="project-filter-btn active" data-filter="all">All Showcase</button>
+        <button type="button" class="project-filter-btn" data-filter="productivity">Productivity &amp; AI</button>
+        <button type="button" class="project-filter-btn" data-filter="edtech">EdTech &amp; Gamification</button>
+        <button type="button" class="project-filter-btn" data-filter="enterprise">Enterprise SaaS</button>
+        <button type="button" class="project-filter-btn" data-filter="social">Social Media</button>
+      </div>
+
+      <!-- 4 Flagship Projects Responsive Grid -->
+      <div class="projects-responsive-grid">
+
+        <!-- PROJECT 01: Task Management & Productivity Platform -->
+        <div class="project-grid-card" data-category="productivity">
+          <div class="high-tech-card" style="height: 100%;">
+            <div class="card-spotlight-layer" aria-hidden="true"></div>
+
+            <!-- Running SVG Glow Tracer -->
+            <svg class="svg-glow-container" aria-hidden="true">
+              <defs>
+                <linearGradient id="glow-p1" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"></stop>
+                  <stop offset="50%" stop-color="#a1a1aa" stop-opacity="0.4"></stop>
+                  <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95"></stop>
+                </linearGradient>
+              </defs>
+              <rect x="1.5" y="1.5" width="calc(100% - 3px)" height="calc(100% - 3px)" rx="18" ry="18" fill="none" stroke="url(#glow-p1)" stroke-width="2" class="svg-glow-rect"></rect>
+            </svg>
+
+            <div class="project-card-inner">
+              <div>
+                <!-- Mockup Banner -->
+                <div class="project-banner-thumb">
+                  <div class="banner-shimmer" aria-hidden="true"></div>
+                  <!-- CSS Mockup: Kanban Board -->
+                  <div class="thumb-mockup" style="background: #09090b; padding: 14px; font-family: monospace; font-size: 11px; color: #a1a1aa; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #27272a; padding-bottom: 6px;">
+                      <span style="color: #fff; font-weight: 700;">Task Board · Gemini AI</span>
+                      <span style="color: #34d399;">● Online</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px;">
+                      <div style="background: #18181b; padding: 8px; border-radius: 6px; border: 1px solid #27272a;">
+                        <span style="color: #cbd5e1; font-size: 10px;">Backlog (4)</span>
+                        <div style="color: #fff; margin-top: 4px; font-size: 10px;">AI Task Decomposition</div>
+                      </div>
+                      <div style="background: #18181b; padding: 8px; border-radius: 6px; border: 1px solid #34d399;">
+                        <span style="color: #34d399; font-size: 10px;">In Progress (2)</span>
+                        <div style="color: #fff; margin-top: 4px; font-size: 10px;">GitHub Webhook Sync</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <span class="banner-view-chip">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                    View Details
+                  </span>
+                </div>
+
+                <div class="project-category-row">
+                  <span class="project-category-tag">Productivity &amp; AI Platform</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles" style="color: #a1a1aa;"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/></svg>
+                </div>
+
+                <h3 class="project-card-title">Task Management &amp; Productivity Platform</h3>
+                <p class="project-card-desc">
+                  Collaborative task and project management platform supporting workflows, workload intelligence, task-debt tracking, automated AI decomposition via Google Gemini, and GitHub webhook synchronization.
+                </p>
+
+                <div class="project-card-techs">
+                  <span class="project-tech-pill">React</span>
+                  <span class="project-tech-pill">Node.js</span>
+                  <span class="project-tech-pill">MongoDB</span>
+                  <span class="project-tech-pill">Socket.IO</span>
+                  <span class="project-tech-pill">Gemini AI</span>
+                  <span class="project-tech-pill">GitHub API</span>
+                </div>
+              </div>
+
+              <div class="project-card-actions">
+                <button type="button" class="touch-details-btn" data-modal-target="task-management">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                  <span>Touch for Details</span>
+                </button>
+                <div style="display: flex; gap: 6px;">
+                  <a href="https://taskmanagement-delta-virid.vercel.app/" target="_blank" rel="noopener noreferrer" class="live-demo-pill">
+                    <span style="height: 6px; width: 6px; border-radius: 50%; background-color: #34d399; display: inline-block;"></span>
+                    <span>Live Demo</span>
+                  </a>
+                  <a href="https://github.com/DK-code06/taskmanagement" target="_blank" rel="noopener noreferrer" class="nav-icon-btn" style="height: 2rem; width: 2rem;" title="GitHub Source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 02: QuestLearn — Gamified Learning & Coding Platform -->
+        <div class="project-grid-card" data-category="edtech">
+          <div class="high-tech-card" style="height: 100%;">
+            <div class="card-spotlight-layer" aria-hidden="true"></div>
+
+            <svg class="svg-glow-container" aria-hidden="true">
+              <defs>
+                <linearGradient id="glow-p2" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"></stop>
+                  <stop offset="50%" stop-color="#a1a1aa" stop-opacity="0.4"></stop>
+                  <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95"></stop>
+                </linearGradient>
+              </defs>
+              <rect x="1.5" y="1.5" width="calc(100% - 3px)" height="calc(100% - 3px)" rx="18" ry="18" fill="none" stroke="url(#glow-p2)" stroke-width="2" class="svg-glow-rect"></rect>
+            </svg>
+
+            <div class="project-card-inner">
+              <div>
+                <div class="project-banner-thumb">
+                  <div class="banner-shimmer" aria-hidden="true"></div>
+                  <!-- CSS Mockup: Coding Battle Arena -->
+                  <div class="thumb-mockup" style="background: #09090b; padding: 14px; font-family: monospace; font-size: 11px; color: #a1a1aa; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #27272a; padding-bottom: 6px;">
+                      <span style="color: #fff; font-weight: 700;">Duel Room #402 · 1v1</span>
+                      <span style="color: #a855f7;">+120 XP</span>
+                    </div>
+                    <div style="background: #18181b; padding: 8px; border-radius: 6px; border: 1px solid #27272a; margin-top: 6px;">
+                      <span style="color: #f43f5e;">function</span> <span style="color: #38bdf8;">solve</span>(target) { <br/>
+                      &nbsp;&nbsp;<span style="color: #4ade80;">return</span> testCasesPassed; <br/>
+                      }
+                    </div>
+                  </div>
+
+                  <span class="banner-view-chip">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                    View Details
+                  </span>
+                </div>
+
+                <div class="project-category-row">
+                  <span class="project-category-tag">EdTech &amp; Gamification</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles" style="color: #a1a1aa;"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/></svg>
+                </div>
+
+                <h3 class="project-card-title">QuestLearn — Gamified Learning Platform</h3>
+                <p class="project-card-desc">
+                  Gamified Learning Management System combining structured courses, interactive algorithmic challenges, competitive real-time coding battle rooms, and RPG-style progression.
+                </p>
+
+                <div class="project-card-techs">
+                  <span class="project-tech-pill">React</span>
+                  <span class="project-tech-pill">TypeScript</span>
+                  <span class="project-tech-pill">Node.js</span>
+                  <span class="project-tech-pill">Socket.IO</span>
+                  <span class="project-tech-pill">MongoDB</span>
+                  <span class="project-tech-pill">Tailwind CSS</span>
+                </div>
+              </div>
+
+              <div class="project-card-actions">
+                <button type="button" class="touch-details-btn" data-modal-target="questlearn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                  <span>Touch for Details</span>
+                </button>
+                <div style="display: flex; gap: 6px;">
+                  <a href="https://questlearn-six.vercel.app/" target="_blank" rel="noopener noreferrer" class="live-demo-pill">
+                    <span style="height: 6px; width: 6px; border-radius: 50%; background-color: #34d399; display: inline-block;"></span>
+                    <span>Live Demo</span>
+                  </a>
+                  <a href="https://github.com/DK-code06/questlearn" target="_blank" rel="noopener noreferrer" class="nav-icon-btn" style="height: 2rem; width: 2rem;" title="GitHub Source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 03: SCMS — Enterprise Management System -->
+        <div class="project-grid-card" data-category="enterprise">
+          <div class="high-tech-card" style="height: 100%;">
+            <div class="card-spotlight-layer" aria-hidden="true"></div>
+
+            <svg class="svg-glow-container" aria-hidden="true">
+              <defs>
+                <linearGradient id="glow-p3" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"></stop>
+                  <stop offset="50%" stop-color="#a1a1aa" stop-opacity="0.4"></stop>
+                  <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95"></stop>
+                </linearGradient>
+              </defs>
+              <rect x="1.5" y="1.5" width="calc(100% - 3px)" height="calc(100% - 3px)" rx="18" ry="18" fill="none" stroke="url(#glow-p3)" stroke-width="2" class="svg-glow-rect"></rect>
+            </svg>
+
+            <div class="project-card-inner">
+              <div>
+                <div class="project-banner-thumb">
+                  <div class="banner-shimmer" aria-hidden="true"></div>
+                  <!-- CSS Mockup: Enterprise RBAC & OCR -->
+                  <div class="thumb-mockup" style="background: #09090b; padding: 14px; font-family: monospace; font-size: 11px; color: #a1a1aa; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #27272a; padding-bottom: 6px;">
+                      <span style="color: #fff; font-weight: 700;">SCMS · PostgreSQL &amp; Knex</span>
+                      <span style="color: #38bdf8;">Python OCR Active</span>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px;">
+                      <div style="background: #18181b; padding: 6px; border-radius: 6px; border: 1px solid #27272a;">
+                        <span style="color: #fff; font-size: 10px;">128 Active Staff</span>
+                      </div>
+                      <div style="background: #18181b; padding: 6px; border-radius: 6px; border: 1px solid #34d399;">
+                        <span style="color: #34d399; font-size: 10px;">Payroll Verified</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <span class="banner-view-chip">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                    View Details
+                  </span>
+                </div>
+
+                <div class="project-category-row">
+                  <span class="project-category-tag">Enterprise SaaS</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles" style="color: #a1a1aa;"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/></svg>
+                </div>
+
+                <h3 class="project-card-title">SCMS — Enterprise Management System</h3>
+                <p class="project-card-desc">
+                  Operations platform architected for workforce hierarchy, automated attendance, payroll computation, leave management, and Python FastAPI OCR document extraction.
+                </p>
+
+                <div class="project-card-techs">
+                  <span class="project-tech-pill">PostgreSQL</span>
+                  <span class="project-tech-pill">Node.js</span>
+                  <span class="project-tech-pill">TypeScript</span>
+                  <span class="project-tech-pill">Knex</span>
+                  <span class="project-tech-pill">FastAPI</span>
+                  <span class="project-tech-pill">Docker</span>
+                </div>
+              </div>
+
+              <div class="project-card-actions">
+                <button type="button" class="touch-details-btn" data-modal-target="scms">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                  <span>Touch for Details</span>
+                </button>
+                <div style="display: flex; gap: 6px;">
+                  <a href="https://scms-red.vercel.app/" target="_blank" rel="noopener noreferrer" class="live-demo-pill">
+                    <span style="height: 6px; width: 6px; border-radius: 50%; background-color: #34d399; display: inline-block;"></span>
+                    <span>Live Demo</span>
+                  </a>
+                  <a href="https://github.com/supportsynnoviqtech/scms" target="_blank" rel="noopener noreferrer" class="nav-icon-btn" style="height: 2rem; width: 2rem;" title="GitHub Source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PROJECT 04: Reminisce — Full-Stack Social Blogging Platform -->
+        <div class="project-grid-card" data-category="social">
+          <div class="high-tech-card" style="height: 100%;">
+            <div class="card-spotlight-layer" aria-hidden="true"></div>
+
+            <svg class="svg-glow-container" aria-hidden="true">
+              <defs>
+                <linearGradient id="glow-p4" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"></stop>
+                  <stop offset="50%" stop-color="#a1a1aa" stop-opacity="0.4"></stop>
+                  <stop offset="100%" stop-color="#ffffff" stop-opacity="0.95"></stop>
+                </linearGradient>
+              </defs>
+              <rect x="1.5" y="1.5" width="calc(100% - 3px)" height="calc(100% - 3px)" rx="18" ry="18" fill="none" stroke="url(#glow-p4)" stroke-width="2" class="svg-glow-rect"></rect>
+            </svg>
+
+            <div class="project-card-inner">
+              <div>
+                <div class="project-banner-thumb">
+                  <div class="banner-shimmer" aria-hidden="true"></div>
+                  <!-- CSS Mockup: Social Post Feed -->
+                  <div class="thumb-mockup" style="background: #09090b; padding: 14px; font-family: monospace; font-size: 11px; color: #a1a1aa; height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #27272a; padding-bottom: 6px;">
+                      <span style="color: #fff; font-weight: 700;">Reminisce · Social Feed</span>
+                      <span style="color: #f43f5e;">♥ 48 Likes</span>
+                    </div>
+                    <div style="background: #18181b; padding: 8px; border-radius: 6px; border: 1px solid #27272a; margin-top: 6px;">
+                      <span style="color: #38bdf8;">@alex_chen:</span> Architecting scalable state with zero hydration mismatch...
+                    </div>
+                  </div>
+
+                  <span class="banner-view-chip">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>
+                    View Details
+                  </span>
+                </div>
+
+                <div class="project-category-row">
+                  <span class="project-category-tag">Social Media &amp; Content</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles" style="color: #a1a1aa;"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/></svg>
+                </div>
+
+                <h3 class="project-card-title">Reminisce — Full-Stack Social Platform</h3>
+                <p class="project-card-desc">
+                  Full-stack social blogging platform featuring rich post authoring, optimized media delivery via Cloudinary, nested community discussions, follow graphs, and curated discovery.
+                </p>
+
+                <div class="project-card-techs">
+                  <span class="project-tech-pill">React</span>
+                  <span class="project-tech-pill">TypeScript</span>
+                  <span class="project-tech-pill">Node.js</span>
+                  <span class="project-tech-pill">MongoDB</span>
+                  <span class="project-tech-pill">JWT</span>
+                  <span class="project-tech-pill">Cloudinary</span>
+                </div>
+              </div>
+
+              <div class="project-card-actions">
+                <button type="button" class="touch-details-btn" data-modal-target="reminisce">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-info"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                  <span>Touch for Details</span>
+                </button>
+                <div style="display: flex; gap: 6px;">
+                  <a href="https://reminisce-alpha.vercel.app/auth" target="_blank" rel="noopener noreferrer" class="live-demo-pill">
+                    <span style="height: 6px; width: 6px; border-radius: 50%; background-color: #34d399; display: inline-block;"></span>
+                    <span>Live Demo</span>
+                  </a>
+                  <a href="https://github.com/DK-code06/blogapp" target="_blank" rel="noopener noreferrer" class="nav-icon-btn" style="height: 2rem; width: 2rem;" title="GitHub Source">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 03: TECHNICAL SKILLS -->
+    <section id="skills" class="max-w-6xl py-12">
+      <div style="margin-bottom: 2rem;">
+        <span class="section-meta-index">03 //</span>
+        <h2 class="section-heading-title">Technical Skills</h2>
+        <p class="section-heading-desc">Categorized software engineering skills across modern languages, frontend frameworks, backend APIs, relational &amp; NoSQL databases, and security.</p>
+      </div>
+
+      <div class="skills-responsive-grid">
+        <!-- 1. Languages -->
+        <div class="high-tech-card skill-category-card">
+          <div class="card-spotlight-layer" aria-hidden="true"></div>
+          <div class="skill-category-header">
+            <span class="skill-category-icon">⚡</span>
+            <h3 class="skill-category-title">Languages</h3>
+          </div>
+          <div class="skill-chips-wrap">
+            <span class="project-tech-pill">JavaScript</span>
+            <span class="project-tech-pill">TypeScript</span>
+            <span class="project-tech-pill">Java</span>
+            <span class="project-tech-pill">Python</span>
+            <span class="project-tech-pill">C</span>
+            <span class="project-tech-pill">C++</span>
+            <span class="project-tech-pill">SQL</span>
+          </div>
+        </div>
+
+        <!-- 2. Frontend -->
+        <div class="high-tech-card skill-category-card">
+          <div class="card-spotlight-layer" aria-hidden="true"></div>
+          <div class="skill-category-header">
+            <span class="skill-category-icon">🎨</span>
+            <h3 class="skill-category-title">Frontend</h3>
+          </div>
+          <div class="skill-chips-wrap">
+            <span class="project-tech-pill">React.js</span>
+            <span class="project-tech-pill">Next.js</span>
+            <span class="project-tech-pill">Vite</span>
+            <span class="project-tech-pill">HTML5</span>
+            <span class="project-tech-pill">CSS3</span>
+            <span class="project-tech-pill">Tailwind CSS</span>
+            <span class="project-tech-pill">React Router</span>
+          </div>
+        </div>
+
+        <!-- 3. Backend -->
+        <div class="high-tech-card skill-category-card">
+          <div class="card-spotlight-layer" aria-hidden="true"></div>
+          <div class="skill-category-header">
+            <span class="skill-category-icon">⚙️</span>
+            <h3 class="skill-category-title">Backend</h3>
+          </div>
+          <div class="skill-chips-wrap">
+            <span class="project-tech-pill">Node.js</span>
+            <span class="project-tech-pill">Express.js</span>
+            <span class="project-tech-pill">REST APIs</span>
+            <span class="project-tech-pill">JWT</span>
+            <span class="project-tech-pill">Socket.IO</span>
+          </div>
+        </div>
+
+        <!-- 4. Databases -->
+        <div class="high-tech-card skill-category-card">
+          <div class="card-spotlight-layer" aria-hidden="true"></div>
+          <div class="skill-category-header">
+            <span class="skill-category-icon">🗄️</span>
+            <h3 class="skill-category-title">Databases</h3>
+          </div>
+          <div class="skill-chips-wrap">
+            <span class="project-tech-pill">PostgreSQL</span>
+            <span class="project-tech-pill">MongoDB</span>
+            <span class="project-tech-pill">Mongoose</span>
+            <span class="project-tech-pill">MySQL</span>
+            <span class="project-tech-pill">Knex</span>
+          </div>
+        </div>
+
+        <!-- 5. AI & Integrations -->
+        <div class="high-tech-card skill-category-card">
+          <div class="card-spotlight-layer" aria-hidden="true"></div>
+          <div class="skill-category-header">
+            <span class="skill-category-icon">🤖</span>
+            <h3 class="skill-category-title">AI &amp; Integrations</h3>
+          </div>
+          <div class="skill-chips-wrap">
+            <span class="project-tech-pill">Google Gemini</span>
+            <span class="project-tech-pill">GitHub OAuth</span>
+            <span class="project-tech-pill">GitHub Webhooks</span>
+            <span class="project-tech-pill">Web Push</span>
+            <span class="project-tech-pill">Cloudinary</span>
+          </div>
+        </div>
+
+        <!-- 6. Testing & Security -->
+        <div class="high-tech-card skill-category-card">
+          <div class="card-spotlight-layer" aria-hidden="true"></div>
+          <div class="skill-category-header">
+            <span class="skill-category-icon">🛡️</span>
+            <h3 class="skill-category-title">Testing &amp; Security</h3>
+          </div>
+          <div class="skill-chips-wrap">
+            <span class="project-tech-pill">Jest</span>
+            <span class="project-tech-pill">Supertest</span>
+            <span class="project-tech-pill">RBAC</span>
+            <span class="project-tech-pill">Helmet</span>
+            <span class="project-tech-pill">CSP</span>
+            <span class="project-tech-pill">HSTS</span>
+            <span class="project-tech-pill">CORS</span>
+          </div>
+        </div>
+
+        <!-- 7. Tools & DevOps -->
+        <div class="high-tech-card skill-category-card">
+          <div class="card-spotlight-layer" aria-hidden="true"></div>
+          <div class="skill-category-header">
+            <span class="skill-category-icon">🛠️</span>
+            <h3 class="skill-category-title">Tools &amp; DevOps</h3>
+          </div>
+          <div class="skill-chips-wrap">
+            <span class="project-tech-pill">Git</span>
+            <span class="project-tech-pill">GitHub</span>
+            <span class="project-tech-pill">Docker</span>
+            <span class="project-tech-pill">Vercel</span>
+            <span class="project-tech-pill">Jenkins</span>
+            <span class="project-tech-pill">Figma</span>
+            <span class="project-tech-pill">Postman</span>
           </div>
         </div>
       </div>
+    </section>
 
-    </div>
-  </section>
+    <!-- SECTION 04: CERTIFICATIONS & ACHIEVEMENTS -->
+    <section id="certifications" class="max-w-6xl py-12">
+      <div style="margin-bottom: 2rem;">
+        <span class="section-meta-index">04 //</span>
+        <h2 class="section-heading-title">Certifications &amp; Credentials</h2>
+        <p class="section-heading-desc">Verified technical course completions and competitive engineering hackathon recognitions.</p>
+      </div>
 
-  <!-- CODING PROFILES -->
-  <section id="coding" aria-labelledby="coding-heading">
-    <div class="section-label">Practice</div>
-    <h2 id="coding-heading" class="section-title reveal">Coding Profiles</h2>
-    <p class="section-desc reveal">Regular algorithmic problem solving, data structures practice, and competitive programming.</p>
+      <div class="skills-responsive-grid">
+        <div class="high-tech-card" style="padding: 1.25rem;">
+          <div class="card-spotlight-layer" aria-hidden="true"></div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-size: 0.6875rem; font-weight: 700; color: #a1a1aa; text-transform: uppercase;">FreeCodeCamp</span>
+            <span style="font-size: 0.6875rem; font-weight: 700; color: #34d399;">Verified</span>
+          </div>
+          <h3 style="font-family: var(--font-outfit); font-size: 1rem; font-weight: 700; color: var(--foreground);">Full Stack Developer</h3>
+          <p style="font-size: 0.8125rem; color: var(--foreground-muted); margin-top: 4px;">Comprehensive curriculum covering responsive UI, APIs, and microservices.</p>
+        </div>
 
-    <div class="profiles-row">
-      <a href="https://www.skillrack.com" target="_blank" rel="noopener noreferrer" class="profile-card reveal" title="View Skillrack Profile">
-        <span class="profile-icon">⚔️</span>
-        <div class="profile-name">Skillrack</div>
-        <div class="profile-stat">Competitive Programming</div>
-        <div class="profile-arrow">View Profile →</div>
-      </a>
-      <a href="https://leetcode.com/u/DK-code06/" target="_blank" rel="noopener noreferrer" class="profile-card reveal" title="View LeetCode Profile">
-        <span class="profile-icon">🟡</span>
-        <div class="profile-name">LeetCode</div>
-        <div class="profile-stat">Data Structures &amp; Algorithms</div>
-        <div class="profile-arrow">View Profile →</div>
-      </a>
-      <a href="https://www.hackerrank.com" target="_blank" rel="noopener noreferrer" class="profile-card reveal" title="View HackerRank Profile">
-        <span class="profile-icon">⭐</span>
-        <div class="profile-name">HackerRank</div>
-        <div class="profile-stat">Problem Solving Practice</div>
-        <div class="profile-arrow">View Profile →</div>
-      </a>
-    </div>
-  </section>
+        <div class="high-tech-card" style="padding: 1.25rem;">
+          <div class="card-spotlight-layer" aria-hidden="true"></div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-size: 0.6875rem; font-weight: 700; color: #a1a1aa; text-transform: uppercase;">Coursera · IBM</span>
+            <span style="font-size: 0.6875rem; font-weight: 700; color: #34d399;">Verified</span>
+          </div>
+          <h3 style="font-family: var(--font-outfit); font-size: 1rem; font-weight: 700; color: var(--foreground);">IBM Full Stack Developer</h3>
+          <p style="font-size: 0.8125rem; color: var(--foreground-muted); margin-top: 4px;">Cloud applications, backend services, containers, and database management.</p>
+        </div>
 
-  <!-- CONTACT SECTION -->
-  <section id="contact" aria-labelledby="contact-heading">
-    <div class="section-label">Connect</div>
-    <h2 id="contact-heading" class="section-title reveal">Let's Build Something</h2>
-    <p class="contact-subtext reveal">
-      Have an opportunity, project idea, or collaboration in mind? Let's connect.
-    </p>
+        <div class="high-tech-card" style="padding: 1.25rem;">
+          <div class="card-spotlight-layer" aria-hidden="true"></div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-size: 0.6875rem; font-weight: 700; color: #a1a1aa; text-transform: uppercase;">Infosys Springboard</span>
+            <span style="font-size: 0.6875rem; font-weight: 700; color: #34d399;">Verified</span>
+          </div>
+          <h3 style="font-family: var(--font-outfit); font-size: 1rem; font-weight: 700; color: var(--foreground);">Software Engineering &amp; DBMS</h3>
+          <p style="font-size: 0.8125rem; color: var(--foreground-muted); margin-top: 4px;">Agile methodologies, relational database systems, and software lifecycles.</p>
+        </div>
 
-    <div class="contact-email-wrap reveal">
-      <a class="contact-email" href="mailto:bdeepakkumar2006@gmail.com">bdeepakkumar2006@gmail.com</a>
-    </div>
+        <div class="high-tech-card" style="padding: 1.25rem;">
+          <div class="card-spotlight-layer" aria-hidden="true"></div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-size: 0.6875rem; font-weight: 700; color: #a1a1aa; text-transform: uppercase;">SSN Engineering</span>
+            <span style="font-size: 0.6875rem; font-weight: 700; color: #f59e0b;">Award</span>
+          </div>
+          <h3 style="font-family: var(--font-outfit); font-size: 1rem; font-weight: 700; color: var(--foreground);">1st Special Mention — SSN 24hr Hackathon</h3>
+          <p style="font-size: 0.8125rem; color: var(--foreground-muted); margin-top: 4px;">Recognized among top teams for rapid prototyping of a full-stack application under 24 hours.</p>
+        </div>
 
-    <div class="contact-meta reveal">
-      <span>📍</span> Kovilpatti, Tamil Nadu, India
-    </div>
+        <div class="high-tech-card" style="padding: 1.25rem;">
+          <div class="card-spotlight-layer" aria-hidden="true"></div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-size: 0.6875rem; font-weight: 700; color: #a1a1aa; text-transform: uppercase;">Saveetha College</span>
+            <span style="font-size: 0.6875rem; font-weight: 700; color: #f59e0b;">3rd Prize</span>
+          </div>
+          <h3 style="font-family: var(--font-outfit); font-size: 1rem; font-weight: 700; color: var(--foreground);">Escape Room Technical Challenge</h3>
+          <p style="font-size: 0.8125rem; color: var(--foreground-muted); margin-top: 4px;">Competitive algorithmic puzzles, rapid debugging, and system problem-solving.</p>
+        </div>
 
-    <div class="contact-links reveal">
-      <a href="mailto:bdeepakkumar2006@gmail.com" class="contact-link">
-        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-        Email Me
-      </a>
-      <a href="https://github.com/DK-code06" target="_blank" rel="noopener noreferrer" class="contact-link">
-        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
-        GitHub
-      </a>
-      <a href="https://www.linkedin.com/in/deepakkumar-b-1a46a62b6" target="_blank" rel="noopener noreferrer" class="contact-link">
-        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-        LinkedIn
-      </a>
-    </div>
-  </section>
+        <div class="high-tech-card" style="padding: 1.25rem;">
+          <div class="card-spotlight-layer" aria-hidden="true"></div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+            <span style="font-size: 0.6875rem; font-weight: 700; color: #a1a1aa; text-transform: uppercase;">NPTEL / SWAYAM</span>
+            <span style="font-size: 0.6875rem; font-weight: 700; color: #34d399;">Certified</span>
+          </div>
+          <h3 style="font-family: var(--font-outfit); font-size: 1rem; font-weight: 700; color: var(--foreground);">Social Networks &amp; Cloud Computing</h3>
+          <p style="font-size: 0.8125rem; color: var(--foreground-muted); margin-top: 4px;">Graph algorithms, distributed computing models, and industrial IoT architecture.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 05: CONTACT & COLLABORATION -->
+    <section id="contact" class="max-w-6xl">
+      <div style="margin-bottom: 2rem;">
+        <span class="section-meta-index">05 //</span>
+        <h2 class="section-heading-title">Contact &amp; Collaboration</h2>
+        <p class="section-heading-desc">Have an opportunity, project idea, or collaboration in mind? Let's connect.</p>
+      </div>
+
+      <div class="high-tech-card contact-card-container">
+        <div class="card-spotlight-layer" aria-hidden="true"></div>
+
+        <p style="font-size: 0.875rem; color: var(--foreground-muted); font-weight: 500;">
+          Direct communication for software engineering roles, internships &amp; technical projects:
+        </p>
+
+        <a class="contact-email-link-hero" href="mailto:bdeepakkumar2006@gmail.com">
+          bdeepakkumar2006@gmail.com
+        </a>
+
+        <div class="contact-location-pill">
+          <span>📍</span> Kovilpatti, Tamil Nadu, India
+        </div>
+
+        <div class="contact-links-grid">
+          <a href="mailto:bdeepakkumar2006@gmail.com" class="contact-action-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/><rect x="2" y="4" width="20" height="16" rx="2"/></svg>
+            <span>Email Me</span>
+          </a>
+          <a href="https://github.com/DK-code06" target="_blank" rel="noopener noreferrer" class="contact-action-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+            <span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/deepakkumar-b-1a46a62b6" target="_blank" rel="noopener noreferrer" class="contact-action-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            <span>LinkedIn</span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- FOOTER -->
-  <footer>
+  <footer id="siteFooter">
     <div>&copy; 2026 Deepakkumar B &middot; Full Stack Developer</div>
-    <div class="footer-links">
+    <div class="footer-social-links">
       <a href="https://github.com/DK-code06" target="_blank" rel="noopener noreferrer">GitHub</a>
       <a href="https://www.linkedin.com/in/deepakkumar-b-1a46a62b6" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       <a href="mailto:bdeepakkumar2006@gmail.com">Email</a>
     </div>
   </footer>
 
-  <!-- PROJECT CASE STUDY MODAL -->
-  <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
-    <div class="modal-container" id="modalContainer">
-      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close Case Study">&times;</button>
-      
-      <div class="modal-header">
-        <span class="modal-badge" id="modalCategory">Category</span>
-        <h3 class="modal-title" id="modalTitle">Project Title</h3>
+  <!-- PROJECT CASE STUDY MODAL DIALOG (NAVENA SPEC) -->
+  <div id="modalBackdropOverlay" aria-hidden="true"></div>
+  <div id="projectCaseStudyModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
+    <div class="modal-dialog-window">
+      <!-- Modal Top Bar -->
+      <div class="modal-top-bar">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="project-category-tag" id="modalCategory">Category</span>
+          <span style="font-size: 11px; font-weight: 500; color: #a1a1aa;" id="modalStatus">Live Platform</span>
+        </div>
+        <button id="modalCloseBtn" class="modal-close-icon-btn" aria-label="Close Case Study">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
       </div>
 
-      <div class="modal-section">
-        <div class="modal-section-title">Overview</div>
-        <p class="modal-desc" id="modalOverview"></p>
+      <!-- Scrollable Body -->
+      <div class="modal-scrollable-body">
+        <div>
+          <h2 id="modalTitle" style="font-family: var(--font-outfit); font-size: 1.5rem; font-weight: 800; color: var(--foreground); line-height: 1.25;">Project Title</h2>
+        </div>
+
+        <div>
+          <div class="modal-section-block-title">Overview</div>
+          <p id="modalOverview" style="font-size: 0.9375rem; color: var(--foreground-muted); line-height: 1.65;"></p>
+        </div>
+
+        <div>
+          <div class="modal-section-block-title">Architecture &amp; System Design</div>
+          <p id="modalArch" style="font-size: 0.9375rem; color: var(--foreground-muted); line-height: 1.65;"></p>
+        </div>
+
+        <div>
+          <div class="modal-section-block-title">Key Capabilities</div>
+          <ul class="modal-feature-list" id="modalFeaturesList"></ul>
+        </div>
+
+        <div>
+          <div class="modal-section-block-title">Technologies Used</div>
+          <div class="skill-chips-wrap" id="modalTechTags" style="margin-top: 6px;"></div>
+        </div>
+
+        <div>
+          <div class="modal-section-block-title">Engineering Challenges Solved</div>
+          <p id="modalChallenges" style="font-size: 0.9375rem; color: var(--foreground-muted); line-height: 1.65;"></p>
+        </div>
       </div>
 
-      <div class="modal-section">
-        <div class="modal-section-title">Architecture &amp; Design</div>
-        <p class="modal-desc" id="modalArch"></p>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-title">Key Capabilities</div>
-        <ul class="modal-features" id="modalFeaturesList"></ul>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-title">Technologies Used</div>
-        <div class="modal-tags" id="modalTechTags"></div>
-      </div>
-
-      <div class="modal-section">
-        <div class="modal-section-title">Engineering Challenges Solved</div>
-        <p class="modal-desc" id="modalChallenges"></p>
-      </div>
-
-      <div class="modal-actions">
-        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" id="modalDemoLink">Launch Live Demo</a>
-        <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm" id="modalGithubLink">View Source on GitHub</a>
+      <!-- Bottom Actions -->
+      <div class="modal-bottom-actions">
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-navena-primary" id="modalDemoLink">
+          <span>Launch Live Demo</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a>
+        <a href="#" target="_blank" rel="noopener noreferrer" class="btn-navena-outline" id="modalGithubLink">
+          View Source on GitHub
+        </a>
       </div>
     </div>
   </div>
 
   <!-- Scripts -->
-  <script src="js/cursor.js"></script>
+  <script src="js/theme.js"></script>
   <script src="js/particles.js"></script>
+  <script src="js/spotlight.js"></script>
   <script src="js/scroll.js"></script>
   <script src="js/counter.js"></script>
   <script src="js/nav.js"></script>
-  <script src="js/photo.js"></script>
   <script src="js/modal.js"></script>
 </body>
 </html>

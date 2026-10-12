@@ -10,9 +10,9 @@
   // 4. Account -> API Keys -> Copy Public Key
   // ============================================================
   const EMAILJS_CONFIG = {
-    SERVICE_ID: 'YOUR_SERVICE_ID',
-    TEMPLATE_ID: 'YOUR_TEMPLATE_ID',
-    PUBLIC_KEY: 'YOUR_PUBLIC_KEY',
+    SERVICE_ID: 'service_nkzhxvv',
+    TEMPLATE_ID: 'template_3ioe5z5',
+    PUBLIC_KEY: 'yP8X-CfsOdNrckdz9',
   };
 
   // Initialize EmailJS if configured and SDK is loaded

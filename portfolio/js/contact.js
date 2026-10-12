@@ -76,6 +76,17 @@
       <svg class="animate-spin" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 1 1-6.219-8.56"/></svg>
     `;
 
+    const now = new Date();
+    const formattedDate = now.toLocaleString('en-US', {
+      weekday: 'short',
+      year: 'numeric',
+      month: 'short',
+      day: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
+      hour12: true,
+    });
+
     // Template variables supporting common EmailJS template naming conventions
     const templateParams = {
       name: name,
@@ -86,6 +97,9 @@
       subject: subject,
       title: subject,
       message: message,
+      timestamp: formattedDate,
+      date: formattedDate,
+      current_year: now.getFullYear().toString(),
     };
 
     const mailtoUrl = `mailto:bdeepakkumar2006@gmail.com?subject=${encodeURIComponent('[' + subject + '] from ' + name)}&body=${encodeURIComponent('From: ' + name + ' (' + email + ')\n\n' + message)}`;

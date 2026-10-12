@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Portfolio Message</title>
+</head>
+<body style="margin: 0; padding: 0; background-color: #090a0f; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;">
+
+  <!-- Outer Background Container -->
+  <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #090a0f; padding: 40px 15px;">
+    <tr>
+      <td align="center">
+
+        <!-- Main Card Container (Max 600px) -->
+        <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="max-width: 600px; background-color: #12131a; border-radius: 18px; border: 1px solid #232530; overflow: hidden; box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);">
+          
+          <!-- Top Cyber Glow Gradient Line -->
+          <tr>
+            <td height="4" style="background: linear-gradient(90deg, #38bdf8 0%, #818cf8 50%, #34d399 100%);"></td>
+          </tr>
+
+          <!-- Header Section -->
+          <tr>
+            <td style="padding: 32px 32px 20px 32px;">
+              <!-- Status Beacon Pill -->
+              <table role="presentation" border="0" cellspacing="0" cellpadding="0" style="margin-bottom: 16px;">
+                <tr>
+                  <td style="background-color: rgba(16, 185, 129, 0.12); border: 1px solid rgba(16, 185, 129, 0.35); border-radius: 9999px; padding: 4px 12px;">
+                    <span style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background-color: #34d399; margin-right: 6px; vertical-align: middle;"></span>
+                    <span style="font-size: 11px; font-weight: 700; color: #34d399; letter-spacing: 0.08em; text-transform: uppercase; vertical-align: middle;">New Portfolio Inquiry</span>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Main Title -->
+              <h1 style="margin: 0; font-size: 24px; font-weight: 800; color: #f8fafc; letter-spacing: -0.025em; line-height: 1.25;">
+                Deepakkumar B <span style="color: #64748b; font-weight: 400; font-size: 18px;">// Engineering Gateway</span>
+              </h1>
+              <p style="margin: 6px 0 0 0; font-size: 13px; color: #94a3b8;">
+                You received a new inquiry submitted through your live full-stack developer portfolio.
+              </p>
+            </td>
+          </tr>
+
+          <!-- Sender Details Card -->
+          <tr>
+            <td style="padding: 0 32px 24px 32px;">
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #171821; border: 1px solid #272836; border-radius: 12px; padding: 18px 20px;">
+                <!-- Sender Name -->
+                <tr>
+                  <td width="32%" style="padding: 6px 0; font-size: 12px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em;">Sender Name</td>
+                  <td style="padding: 6px 0; font-size: 14px; font-weight: 700; color: #f1f5f9;">{{name}}</td>
+                </tr>
+                <!-- Sender Email -->
+                <tr>
+                  <td width="32%" style="padding: 6px 0; font-size: 12px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em;">Email Address</td>
+                  <td style="padding: 6px 0; font-size: 14px; font-weight: 600;">
+                    <a href="mailto:{{email}}" style="color: #38bdf8; text-decoration: none;">{{email}}</a>
+                  </td>
+                </tr>
+                <!-- Inquiry Topic -->
+                <tr>
+                  <td width="32%" style="padding: 6px 0; font-size: 12px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em;">Inquiry Scope</td>
+                  <td style="padding: 6px 0;">
+                    <span style="display: inline-block; background-color: rgba(56, 189, 248, 0.12); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.25); border-radius: 6px; padding: 2px 10px; font-size: 12px; font-weight: 700;">
+                      {{subject}}
+                    </span>
+                  </td>
+                </tr>
+                <!-- Timestamp -->
+                <tr>
+                  <td width="32%" style="padding: 6px 0; font-size: 12px; font-weight: 600; color: #64748b; text-transform: uppercase; letter-spacing: 0.05em;">Received At</td>
+                  <td style="padding: 6px 0; font-size: 12px; color: #94a3b8; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;">{{timestamp}}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Message Content Box -->
+          <tr>
+            <td style="padding: 0 32px 28px 32px;">
+              <div style="font-size: 11px; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;">
+                Message Body
+              </div>
+              <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0" style="background-color: #0b0c10; border-left: 3px solid #38bdf8; border-top: 1px solid #1f212b; border-right: 1px solid #1f212b; border-bottom: 1px solid #1f212b; border-radius: 8px; padding: 20px;">
+                <tr>
+                  <td style="font-size: 15px; line-height: 1.7; color: #e2e8f0; white-space: pre-wrap; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">{{message}}</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Action Button: Reply Directly -->
+          <tr>
+            <td align="center" style="padding: 0 32px 32px 32px;">
+              <table role="presentation" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                  <td align="center" style="border-radius: 10px; background-color: #ffffff;">
+                    <a href="mailto:{{email}}?subject=Re: {{subject}}" target="_blank" style="display: inline-block; padding: 13px 28px; font-size: 14px; font-weight: 700; color: #09090b; text-decoration: none; border-radius: 10px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; letter-spacing: -0.01em;">
+                      Reply Directly to {{name}} &rarr;
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- Footer Section -->
+          <tr>
+            <td style="background-color: #0b0c10; border-top: 1px solid #1e202a; padding: 24px 32px; text-align: center;">
+              <p style="margin: 0; font-size: 12px; color: #64748b; line-height: 1.5;">
+                This transmission was automatically dispatched by your Portfolio Gateway (<a href="mailto:bdeepakkumar2006@gmail.com" style="color: #94a3b8; text-decoration: none;">bdeepakkumar2006@gmail.com</a>).
+              </p>
+              <p style="margin: 8px 0 0 0; font-size: 11px; color: #475569;">
+                <a href="https://github.com/DK-code06" target="_blank" style="color: #64748b; text-decoration: none; margin: 0 8px;">GitHub</a> &bull;
+                <a href="https://www.linkedin.com/in/deepakkumar-b-1a46a62b6" target="_blank" style="color: #64748b; text-decoration: none; margin: 0 8px;">LinkedIn</a> &bull;
+                <span style="color: #475569;">Kovilpatti, Tamil Nadu, India</span>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+        <!-- End Main Card -->
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

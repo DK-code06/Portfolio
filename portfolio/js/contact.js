@@ -47,11 +47,11 @@
 
     const name = document.getElementById('contactName')?.value.trim();
     const email = document.getElementById('contactEmail')?.value.trim();
-    const subject = document.getElementById('contactSubject')?.value.trim() || 'Portfolio Inquiry';
+    const subject = document.getElementById('contactSubject')?.value.trim();
     const message = document.getElementById('contactMessage')?.value.trim();
 
     // Basic validation
-    if (!name || !email || !message) {
+    if (!name || !email || !subject || !message) {
       setStatus('error', `
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-alert-circle"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
         <span>Please fill in all required fields.</span>
@@ -125,7 +125,7 @@
           setStatus('success', `
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
             <div>
-              <strong>Message Sent Successfully!</strong> Thank you, ${name}! Your email has been delivered directly to Deepak's inbox.
+              <strong>Message Sent Successfully!</strong> Thank you for reaching out. Your message has been delivered directly.
             </div>
           `);
           form.reset();
